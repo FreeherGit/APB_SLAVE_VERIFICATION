@@ -7,12 +7,12 @@ class apb_error_test #(
     localparam int WORD_BYTES = DATA_WIDTH / 8;
     localparam int MEM_WORDS  = 64;
 
-    function new(
-        virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif
-    );
-        super.new(vif);
-    endfunction
-
+function new(
+    virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif,
+    apb_coverage #(ADDR_WIDTH, DATA_WIDTH, 64) shared_cov = null
+);
+    super.new(vif, shared_cov);
+endfunction
     virtual task run_test();
 
         bit [63:0] rdata;
@@ -99,7 +99,41 @@ class apb_error_test #(
             local_failures++;
             $error("[FAIL] Misaligned address did not return PSLVERR.");
         end
+// TEST 4: Write to an OUT-OF-RANGE (Invalid) address
+        test_addr = MEM_WORDS * WORD_BYTES; // Valid রেঞ্জের ঠিক বাইরের একটি অ্যাড্রেস
 
+        $display("\nTEST 4: Write to an OUT-OF-RANGE address");
+        $display("Attempting WRITE at address: 0x%0h", test_addr);
+        $display("Expected PSLVERR: 1");
+
+        // 1'b1 দিয়ে Write অপারেশন বোঝানো হয়েছে
+        do_transfer(test_addr, 64'hDEADBEEF, 1'b1, rdata, error);
+
+        $display("Returned PSLVERR: %0b", error);
+
+        if (error === 1'b1) begin
+            $display("[PASS] Out-of-range write correctly returned PSLVERR.");
+        end
+        else begin
+            local_failures++;
+            $error("[FAIL] Out-of-range write did not return PSLVERR.");
+        end
+        
+        // TEST 5: Write to a MISALIGNED address
+        test_addr = 1; // 4-byte aligned নয় এমন একটি অ্যাড্রেস
+
+        $display("\nTEST 5: Write to a MISALIGNED address");
+        $display("Attempting WRITE at address: 0x%0h", test_addr);
+        
+        do_transfer(test_addr, 64'hBEEFDEAD, 1'b1, rdata, error);
+        
+        if (error === 1'b1) begin
+            $display("[PASS] Misaligned write correctly returned PSLVERR.");
+        end
+        else begin
+            local_failures++;
+            $error("[FAIL] Misaligned write did not return PSLVERR.");
+        end
         // SUMMARY
         $display("\n================================================");
         $display("             APB ERROR TEST SUMMARY");

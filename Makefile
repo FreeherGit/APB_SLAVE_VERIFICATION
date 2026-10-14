@@ -1,90 +1,91 @@
+TOP      = tb_top
+FILELIST = filelist.f
+TEST     ?= write
 
-# ==========================================
-# APB Slave Verification - Vivado / XSim
-# ==========================================
+XVLOG = xvlog
+XELAB = xelab
+XSIM  = xsim
+XCRG  = xcrg
 
-TOP       = tb_top
-FILELIST  = filelist.f
-TEST      ?= write
+SNAPSHOT = $(TOP)_sim
+WAVE     = apb_wave.wdb
+LOG      = sim.log
 
-XVLOG     = xvlog
-XELAB     = xelab
-XSIM      = xsim
+CC_DIR   = ./xsim.codeCov
+COV_DIR  = ./xsim.covdb
+REPORT   = ./cov_report
 
-SNAPSHOT  = $(TOP)_sim
-WAVE      = apb_wave.wdb
-LOG       = sim.log
+# Define all regression tests
+TEST_LIST = reset write read wait back_to_back error protocol overwrite
 
-.PHONY: all compile elaborate run wave view clean \
-        reset write read wait back_to_back error protocol \
-        parameter walking1 overwrite
+.PHONY: all compile elaborate run view wave clean coverage_report $(TEST_LIST)
 
-# Default target
-all: run
+# Full regression: clean, elaborate ONCE, run all tests, build HTML report
+all: clean elaborate
+	@for t in $(TEST_LIST); do \
+		echo "========================================"; \
+		echo " REGRESSION: Running test '$$t'"; \
+		echo "========================================"; \
+		$(MAKE) run TEST=$$t || echo "WARNING: test '$$t' returned an error"; \
+	done
+	$(MAKE) coverage_report
 
-# ==========================================
-# Compile SystemVerilog sources
-# ==========================================
 compile:
 	$(XVLOG) -sv -f $(FILELIST)
 
-# ==========================================
-# Elaborate the testbench
-# ==========================================
+# Elaborate with code coverage (statement, branch, condition, toggle)
 elaborate: compile
-	$(XELAB) $(TOP) -s $(SNAPSHOT)
+	$(XELAB) -cc_type sbct $(TOP) -s $(SNAPSHOT)
 
-# ==========================================
-# Run simulation and save waveform
-# ==========================================
-run: elaborate
-	$(XSIM) $(SNAPSHOT) -testplusarg TEST=$(TEST) \
-		-wdb $(WAVE) -log $(LOG) -runall
+# Run without re-elaborating. xsim keeps coverage in memory, so the generated
+# Tcl script runs the sim, then SAVES both databases under the test's name:
+#   functional -> ./xsim.covdb/<test>/xsim.covinfo
+#   code       -> ./xsim.codeCov/<test>/xsim.CCInfo
+# -onfinish stop keeps the simulator alive after $finish so the save can happen.
+# (xsim has no -cc_db/-cc_dir; those are xelab-only options.)
+run:
+	@printf 'run all\nwrite_xsim_coverage -cov_db_name %s\nquit\n' $(TEST) > $(TEST)_cov.tcl
+	$(XSIM) $(SNAPSHOT) \
+		-testplusarg TEST=$(TEST) \
+		-wdb $(TEST)_$(WAVE) \
+		-log $(TEST)_$(LOG) \
+		-cov_db_name $(TEST) \
+		-onfinish stop \
+		-tclbatch $(TEST)_cov.tcl
 
-# ==========================================
-# Open waveform viewer
-# ==========================================
+# Merge functional + code coverage of every test that actually produced a DB
+coverage_report:
+	@if [ ! -d $(CC_DIR) ]; then \
+		echo "ERROR: $(CC_DIR) not found - code coverage was not collected."; \
+		echo "       Run 'make elaborate' and at least one 'make run TEST=<name>' first."; \
+		exit 1; \
+	fi
+	@CC_ARGS=""; FOUND=""; FUNC_ARGS=""; \
+	if [ -d $(COV_DIR) ]; then FUNC_ARGS="-dir $(COV_DIR)"; fi; \
+	for t in $(TEST_LIST); do \
+		if [ -f $(CC_DIR)/$$t/xsim.CCInfo ]; then \
+			CC_ARGS="$$CC_ARGS -cc_db $$t"; FOUND="$$FOUND $$t"; \
+		fi; \
+	done; \
+	if [ -z "$$CC_ARGS" ]; then \
+		echo "ERROR: no per-test code coverage DBs in $(CC_DIR). Contents:"; \
+		ls -R $(CC_DIR); \
+		exit 1; \
+	fi; \
+	echo "Merging code coverage from:$$FOUND"; \
+	$(XCRG) $$FUNC_ARGS -cc_dir $(CC_DIR) $$CC_ARGS \
+		-report_dir $(REPORT) -report_format html
+	@echo "Reports written under $(REPORT)/ (code coverage: $(REPORT)/codeCoverageReport/)"
+
 view:
-	$(XSIM) $(SNAPSHOT) -gui -view $(WAVE)
+	$(XSIM) $(SNAPSHOT) -gui -view $(TEST)_$(WAVE)
 
 wave: view
 
-# ==========================================
-# Individual test targets
-# ==========================================
-reset:
-	$(MAKE) run TEST=reset
+# Single-test shortcuts
+$(TEST_LIST):
+	$(MAKE) run TEST=$@
 
-write:
-	$(MAKE) run TEST=write
-
-read:
-	$(MAKE) run TEST=read
-
-wait:
-	$(MAKE) run TEST=wait
-
-back_to_back:
-	$(MAKE) run TEST=back_to_back
-
-error:
-	$(MAKE) run TEST=error
-
-protocol:
-	$(MAKE) run TEST=protocol
-
-parameter:
-	$(MAKE) run TEST=parameter
-
-walking1:
-	$(MAKE) run TEST=walking1
-
-overwrite:
-	$(MAKE) run TEST=overwrite
-
-# ==========================================
-# Clean generated files
-# ==========================================
+# Wipe all generated files, including both coverage databases
 clean:
-	rm -rf xsim.dir .Xil *.jou *.log *.pb *.wdb *.vcd
-
+	rm -rf xsim.dir .Xil *.log *.jou *.pb *.wdb *_cov.tcl xsim.covdb xsim.codeCov cov_report

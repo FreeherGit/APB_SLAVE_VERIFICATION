@@ -1,0 +1,162 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Oct 14 14:27:26 2026
+# Process ID         : 4080007
+# Current directory  : /home/fariha/Documents/apb_verification_project
+# Command line       : xsim -log error_sim.log -mode tcl -source {xsim.dir/tb_top_sim/xsim_script.tcl}
+# Log file           : /home/fariha/Documents/apb_verification_project/error_sim.log
+# Journal file       : /home/fariha/Documents/apb_verification_project/xsim.jou
+# Running On         : vlsi-vivado
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
+# CPU Frequency      : 3999.841 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 41875 MB
+# Swap memory        : 27648 MB
+# Total Virtual      : 69524 MB
+# Available Virtual  : 59108 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_top_sim/xsim_script.tcl
+# xsim {tb_top_sim} -testplusarg TEST=error -wdb {error_apb_wave.wdb} -cov_db_name error -autoloadwcfg -tclbatch {error_cov.tcl} -onfinish stop
+Time resolution is 1 ps
+source error_cov.tcl
+## run all
+
+====================================
+ APB SLAVE VERIFICATION TESTBENCH
+ ADDR_WIDTH = 32
+ DATA_WIDTH = 32
+ Selected test = error
+====================================
+
+========================================
+Starting APB test
+ADDR_WIDTH = 32
+DATA_WIDTH = 32
+========================================
+
+========================================
+Starting APB test
+ADDR_WIDTH = 32
+DATA_WIDTH = 32
+========================================
+
+================================================
+              APB ERROR TEST
+================================================
+Memory depth : 64 words
+Word size    : 4 bytes
+Valid range  : 0x000 - 0xfc
+
+TEST 1: Read from a VALID address
+Attempting READ at address: 0x0
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000000
+[WAIT] Time=120000 | Type= READ | Addr=0x00000000 | Stalled cycle=1
+[READY] Time=130000 | Type= READ | Addr=0x00000000 | Wait cycles=1
+[COVERAGE] Transfer=1 Type= READ Addr=0x00000000 Error=0 Wait=1
+[MONITOR] TRANSFER #1 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000000 data=00000000
+Returned PSLVERR: 0
+Returned PRDATA : 0x0
+[PASS] Valid address did not produce an error.
+
+TEST 2: Read from an OUT-OF-RANGE address
+Attempting READ at address: 0x100
+Expected PSLVERR: 1
+Expected PRDATA : 0x0
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000100
+[WAIT] Time=160000 | Type= READ | Addr=0x00000100 | Stalled cycle=1
+[READY] Time=170000 | Type= READ | Addr=0x00000100 | Wait cycles=1
+[COVERAGE] Transfer=2 Type= READ Addr=0x00000100 Error=1 Wait=1
+[MONITOR] TRANSFER #2 captured | PSLVERR=1
+Returned PSLVERR: 1
+Returned PRDATA : 0x0
+[PASS] Out-of-range address correctly returned PSLVERR.
+[PASS] Invalid read returned zero.
+
+TEST 3: Read from a MISALIGNED address
+Attempting READ at address: 0x1
+Expected PSLVERR: 1
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000001
+[WAIT] Time=200000 | Type= READ | Addr=0x00000001 | Stalled cycle=1
+[READY] Time=210000 | Type= READ | Addr=0x00000001 | Wait cycles=1
+[COVERAGE] Transfer=3 Type= READ Addr=0x00000001 Error=0 Wait=1
+[MONITOR] TRANSFER #3 captured | PSLVERR=0
+Error: SCOREBOARD: PSLVERR mismatch addr=00000001 expected=1 actual=0
+Time: 210 ns  Iteration: 0  Process: /$unit_apb_interface_sv_2514249464/apb_scoreboard(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORDS=64)::run  Scope: $unit_apb_interface_sv_2514249464.apb_scoreboard(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORDS=64)::run  File: /home/fariha/Documents/apb_verification_project/apb_scoreboard.sv Line: 59
+Returned PSLVERR: 0
+Returned PRDATA : 0x0
+Error: [FAIL] Misaligned address did not return PSLVERR.
+Time: 220 ns  Iteration: 0  Process: /$unit_apb_interface_sv_2514249464/apb_error_test(ADDR_WIDTH=32,DATA_WIDTH=32)::run_test  Scope: $unit_apb_interface_sv_2514249464.apb_error_test(ADDR_WIDTH=32,DATA_WIDTH=32)::run_test  File: /home/fariha/Documents/apb_verification_project/apb_error_test.sv Line: 100
+
+TEST 4: Write to an OUT-OF-RANGE address
+Attempting WRITE at address: 0x100
+Expected PSLVERR: 1
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000100
+[WAIT] Time=240000 | Type=WRITE | Addr=0x00000100 | Stalled cycle=1
+[WAIT] Time=250000 | Type=WRITE | Addr=0x00000100 | Stalled cycle=2
+[READY] Time=260000 | Type=WRITE | Addr=0x00000100 | Wait cycles=2
+[COVERAGE] Transfer=4 Type=WRITE Addr=0x00000100 Error=1 Wait=2
+[MONITOR] TRANSFER #4 captured | PSLVERR=1
+Returned PSLVERR: 1
+[PASS] Out-of-range write correctly returned PSLVERR.
+
+TEST 5: Write to a MISALIGNED address
+Attempting WRITE at address: 0x1
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000001
+[WAIT] Time=290000 | Type=WRITE | Addr=0x00000001 | Stalled cycle=1
+[WAIT] Time=300000 | Type=WRITE | Addr=0x00000001 | Stalled cycle=2
+[READY] Time=310000 | Type=WRITE | Addr=0x00000001 | Wait cycles=2
+[COVERAGE] Transfer=5 Type=WRITE Addr=0x00000001 Error=0 Wait=2
+[MONITOR] TRANSFER #5 captured | PSLVERR=0
+Error: SCOREBOARD: PSLVERR mismatch addr=00000001 expected=1 actual=0
+Time: 310 ns  Iteration: 0  Process: /$unit_apb_interface_sv_2514249464/apb_scoreboard(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORDS=64)::run  Scope: $unit_apb_interface_sv_2514249464.apb_scoreboard(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORDS=64)::run  File: /home/fariha/Documents/apb_verification_project/apb_scoreboard.sv Line: 59
+Error: [FAIL] Misaligned write did not return PSLVERR.
+Time: 320 ns  Iteration: 0  Process: /$unit_apb_interface_sv_2514249464/apb_error_test(ADDR_WIDTH=32,DATA_WIDTH=32)::run_test  Scope: $unit_apb_interface_sv_2514249464.apb_error_test(ADDR_WIDTH=32,DATA_WIDTH=32)::run_test  File: /home/fariha/Documents/apb_verification_project/apb_error_test.sv Line: 135
+
+================================================
+             APB ERROR TEST SUMMARY
+================================================
+Transfers attempted: 3
+Failures recorded  : 2
+OVERALL RESULT: FAIL
+================================================
+
+
+========== SCOREBOARD REPORT ==========
+Completed transfers : 5
+Checking errors     : 2
+========================================
+Driver timeouts : 0
+Local failures  : 2
+Error: TEST RESULT: FAIL
+Time: 321 ns  Iteration: 0  Process: /$unit_apb_interface_sv_2514249464/apb_base_test(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORD=64)::finish_test  Scope: $unit_apb_interface_sv_2514249464.apb_base_test(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORD=64)::finish_test  File: /home/fariha/Documents/apb_verification_project/apb_base_test.sv Line: 100
+
+====================================
+ APB TEST COMPLETED
+====================================
+
+========================================
+       APB FUNCTIONAL COVERAGE
+========================================
+Completed transfers sampled : 5
+Functional coverage         : 66.67%
+========================================
+
+$finish called at time : 321 ns : File "/home/fariha/Documents/apb_verification_project/apb_tb_top.sv" Line 148
+## write_xsim_coverage -cov_db_name error
+INFO:  (TCL) Writing Functional Coverage Database at path : xsim.covdb/error/xsim.covinfo
+INFO-SAVE : (TCL) Code Coverage DB saved successfully at : xsim.codeCov/error/xsim.CCInfo
+## quit
+INFO: xsimkernel Simulation Memory Usage: 284020 KB (Peak: 336484 KB), Simulation CPU Usage: 1160 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 14 14:27:29 2026...

@@ -1,0 +1,369 @@
+/*
+
+AMD xsim v2025.2 (64-bit) [Major: 2025, Minor: 2]
+SW Build: 6299465 on Fri Nov 14 12:34:56 MST 2025
+IP Build: 6300035 on Fri Nov 14 10:48:45 MST 2025
+IP Build: 6300035 on Fri Nov 14 10:48:45 MST 2025
+
+Process ID (PID): 3028760
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Tue Oct 13 19:19:24 BDT 2026
+Time zone: 	Bangladesh Standard Time (Asia/Dhaka)
+
+OS: Ubuntu
+OS Version: 7.0.0-34-generic
+OS Architecture: amd64
+Available processors (cores): 12
+LSB Release Description: DISTRIB_ID=Ubuntu
+
+Display: localhost:15.0
+Screen size: 1920x1080
+Local screen bounds: x = 66, y = 32, width = 1854, height = 1048
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: true
+
+Java version: 	21.0.5 64-bit
+
+Java home: 	/tools/2025.2/tps/lnx64/jre21.0.5_11
+Java executable: 	/tools/2025.2/tps/lnx64/jre21.0.5_11/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms812m, -Xmx6144m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	812 MB
+Java maximum memory (-Xmx):	 6 GB
+
+User name: 	fariha
+User home directory: /home/fariha
+User working directory: /home/fariha/Documents/apb_verification_project
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/2025.2
+HDI_APPROOT: /tools/2025.2/Vivado
+RDI_DATADIR: /tools/2025.2/SharedData/data:/tools/2025.2/data
+RDI_BINDIR: /tools/2025.2/Vivado/bin
+
+Vivado preferences file: /home/fariha/.Xilinx/xsim/2025.2/vivado.xml
+Vivado preferences directory: /home/fariha/.Xilinx/xsim/2025.2/
+Vivado layouts directory: /home/fariha/.Xilinx/xsim/2025.2/data/layouts
+PlanAhead jar file: 	/tools/2025.2/Vivado/lib/classes/planAhead.jar
+Vivado log file: 	/home/fariha/Documents/apb_verification_project/xsim.log
+Vivado journal file: 	/home/fariha/Documents/apb_verification_project/xsim.jou
+Engine tmp dir: 	./.Xil/xsim-3028760-vlsi-vivado
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+RDI_APPROOT: /tools/2025.2/Vivado
+RDI_BASEROOT: /tools/2025.2
+RDI_BINROOT: /tools/2025.2/Vivado/bin
+RDI_BUILD: yes
+RDI_DATADIR: /tools/2025.2/SharedData/data:/tools/2025.2/data
+RDI_INSTALLROOT: /tools
+RDI_INSTALLVER: Vivado
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 21.0.5_11
+RDI_LIBDIR: /tools/2025.2/Vivado/lib/lnx64.o/Ubuntu/24:/tools/2025.2/Vivado/lib/lnx64.o/Ubuntu:/tools/2025.2/Vivado/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /tools/2025.2/Vitis/bin:/tools/2025.2/Vivado/ids_lite/ISE/bin/lin64
+RDI_PROG: /tools/2025.2/Vivado/bin/unwrapped/lnx64.o/xsim
+RDI_SESSION_INFO: /home/fariha/Documents/apb_verification_project:vlsi-vivado_1791897548_3028671
+RDI_SHARED_DATA: /tools/2025.2/SharedData/data
+RDI_TPS_ROOT: /tools/2025.2/Vivado/tps/lnx64
+RDI_USE_JDK21: 1
+SHELL: /bin/bash
+XILINX: /tools/2025.2/Vivado/ids_lite/ISE
+XILINX_DSP: /tools/2025.2/Vivado/ids_lite/ISE
+XILINX_PLANAHEAD: /tools/2025.2/Vivado
+XILINX_SDK: /tools/2025.2/Vitis
+XILINX_VITIS: /tools/2025.2/Vitis
+
+
+GUI allocated memory:	812 MB
+GUI max memory:		6,144 MB
+Engine allocated memory: 2,026 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: START_PROGRESS_DIALOG
+// Tcl Message: source xsim.dir/tb_top_sim/xsim_script.tcl 
+// Tcl Message: # set_param project.enableReportConfiguration 0 
+// TclEventType: LOAD_FEATURE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: # load_feature core # current_fileset 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 134 MB (+138055kb) [00:00:17]
+// [Engine Memory]: 2,099 MB (+2049243kb) [00:00:17]
+// WARNING: HEventQueue.dispatchEvent() is taking  5696 ms.
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/2025.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,123 MB. GUI used memory: 70 MB. Current time: 10/13/26, 7:19:31 PM BDT
+// Tcl Message: current_fileset: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 12536.168 ; gain = 10.000 ; free physical = 31231 ; free virtual = 56003 
+// Tcl Message: # xsim {tb_top_sim} -view {{write_apb_wave.wdb}} 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// WARNING: HEventQueue.dispatchEvent() is taking  1469 ms.
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: open_wave_config write_apb_wave.wdb 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: ERROR: [Wavedata 42-2] Error while reading WCFG file '/home/fariha/Documents/apb_verification_project/write_apb_wave.wdb'. 
+// TclEventType: STOP_PROGRESS_DIALOG
+// HOptionPane Error: 'ERROR: [Wavedata 42-2] Error while reading WCFG file '/home/fariha/Documents/apb_verification_ project/write_apb_wave.wdb'.  (Sourcing Tcl script 'xsim.dir/tb_top_sim/xsim_script.tcl')'
+// Tcl Message: xsim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 12586.223 ; gain = 50.055 ; free physical = 31200 ; free virtual = 55972 
+// TclEventType: STOP_PROGRESS_DIALOG
+selectButton("OptionPane.button", "OK", "Sourcing Tcl script 'xsim.dir/tb_top_sim/xsim_script.tcl'"); // JButton (OptionPane.button)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/M.f': 20s
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ah (PAResourceItoN.MainMenuMgr_FILE, File)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ah (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ah (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // am (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_SIMULATION_WAVEFORM, "Simulation Waveform"); // am (PAResourceItoN.MainMenuMgr_SIMULATION_WAVEFORM, Simulation Waveform)
+selectMenu(PAResourceItoN.MainMenuMgr_SIMULATION_WAVEFORM, "Simulation Waveform"); // am (PAResourceItoN.MainMenuMgr_SIMULATION_WAVEFORM, Simulation Waveform)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // am (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ah (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ah (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ah (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,150 MB. GUI used memory: 71 MB. Current time: 10/13/26, 7:19:55 PM BDT
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+// Elapsed time: 20 seconds
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ah (PAResourceItoN.MainMenuMgr_FILE, File)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ah (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ah (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ah (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ah (PAResourceItoN.MainMenuMgr_VIEW, View)
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ah (PAResourceItoN.MainMenuMgr_VIEW, View)
+selectButton(RDIResourceCommand.RDICommands_SETTINGS, "settings"); // C (RDIResourceCommand.RDICommands_SETTINGS, settings)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// Tcl (Dont Echo) Command: 'rdi::info_commands {device::*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {debug::*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {*}'
+// HMemoryUtils.trashcanNow. Engine heap size: 2,175 MB. GUI used memory: 95 MB. Current time: 10/13/26, 7:20:24 PM BDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,175 MB. GUI used memory: 95 MB. Current time: 10/13/26, 7:20:35 PM BDT
+// Elapsed time: 18 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ah (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ah (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ah (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // am (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ah (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ah (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ah (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ah (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ah (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+selectMenuItem(RDIResource.MainWinMenuMgr_LOAD, "Simulation"); // ap (RDIResource.MainWinMenuMgr_LOAD, Simulation)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// WARNING: HEventQueue.dispatchEvent() is taking  1849 ms.
+// Elapsed time: 14 seconds
+selectRadioButton(PAResourceQtoS.SettingsOptionsProjectPage_VHDL_LANGUAGE, "VHDL"); // a (PAResourceQtoS.SettingsOptionsProjectPage_VHDL_LANGUAGE)
+selectRadioButton(PAResourceQtoS.SettingsOptionsProjectPage_VHDL_LANGUAGE, "VHDL"); // a (PAResourceQtoS.SettingsOptionsProjectPage_VHDL_LANGUAGE)
+selectRadioButton(PAResourceQtoS.SettingsOptionsProjectPage_VHDL_LANGUAGE, "VHDL"); // a (PAResourceQtoS.SettingsOptionsProjectPage_VHDL_LANGUAGE)
+selectRadioButton(PAResourceQtoS.SettingsOptionsProjectPage_VHDL_LANGUAGE, "VHDL"); // a (PAResourceQtoS.SettingsOptionsProjectPage_VHDL_LANGUAGE)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,180 MB. GUI used memory: 95 MB. Current time: 10/13/26, 7:21:15 PM BDT
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel", "Settings"); // f (RDIResource.BaseDialog_CANCEL)
+dismissDialog("Settings"); // e (dialog0)
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ah (PAResourceItoN.MainMenuMgr_VIEW, View)
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ah (PAResourceItoN.MainMenuMgr_VIEW, View)
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ah (PAResourceItoN.MainMenuMgr_VIEW, View)
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ah (PAResourceItoN.MainMenuMgr_VIEW, View)
+selectMenu(PAResourceItoN.MainMenuMgr_RUN, "Run"); // ah (PAResourceItoN.MainMenuMgr_RUN, Run)
+dismissMenu(PAResourceItoN.MainMenuMgr_RUN, "Run"); // ah (PAResourceItoN.MainMenuMgr_RUN, Run)
+selectMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ah (PAResourceItoN.MainMenuMgr_HELP, Help)
+dismissMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ah (PAResourceItoN.MainMenuMgr_HELP, Help)
+selectMenu(PAResourceItoN.MainMenuMgr_RUN, "Run"); // ah (PAResourceItoN.MainMenuMgr_RUN, Run)
+dismissMenu(PAResourceItoN.MainMenuMgr_RUN, "Run"); // ah (PAResourceItoN.MainMenuMgr_RUN, Run)
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+selectMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ah (PAResourceItoN.MainMenuMgr_HELP, Help)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,181 MB. GUI used memory: 77 MB. Current time: 10/13/26, 7:21:55 PM BDT
+// Elapsed time: 44 seconds
+dismissMenu(PAResourceItoN.MainMenuMgr_HELP, "Help"); // ah (PAResourceItoN.MainMenuMgr_HELP, Help)
+selectButton(PAResourceItoN.MainToolbarMgr_OPEN, (String) null); // ae (PAResourceItoN.MainToolbarMgr_OPEN)
+selectMenu(PAResourceItoN.MainToolbarMgr_OPEN_RECENT_FILE, "Open Recent File"); // am (PAResourceItoN.MainToolbarMgr_OPEN_RECENT_FILE, Open Recent File)
+selectMenu(PAResourceItoN.MainToolbarMgr_OPEN_RECENT_FILE, "Open Recent File"); // am (PAResourceItoN.MainToolbarMgr_OPEN_RECENT_FILE, Open Recent File)
+selectMenu(PAResourceItoN.MainToolbarMgr_OPEN_RECENT_FILE, "Open Recent File"); // am (PAResourceItoN.MainToolbarMgr_OPEN_RECENT_FILE, Open Recent File)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ah (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ah (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // am (RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, Custom Commands)
+selectMenuItem(RDIResourceCommand.RDICommands_SETTINGS, "Settings..."); // ap (RDIResourceCommand.RDICommands_SETTINGS, settings_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// WARNING: HEventQueue.dispatchEvent() is taking  2429 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,192 MB. GUI used memory: 96 MB. Current time: 10/13/26, 7:22:35 PM BDT
+dismissDialog("Settings"); // e (dialog0)
+// Elapsed time: 24 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ah (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ah (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ah (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,192 MB. GUI used memory: 84 MB. Current time: 10/13/26, 7:23:15 PM BDT
+// Elapsed time: 13 seconds
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ah (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // am (RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, Custom Commands)
+selectMenuItem(RDIResourceCommand.RDICommands_SETTINGS, "Settings..."); // ap (RDIResourceCommand.RDICommands_SETTINGS, settings_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// WARNING: HEventQueue.dispatchEvent() is taking  2182 ms.
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Project]", 0, false); // s (PAResourceQtoS.SettingsDialog_OPTIONS_TREE, Options Tree)
+// Elapsed time: 21 seconds
+selectRadioButton(PAResourceQtoS.SettingsOptionsProjectPage_USE_YOUR_DESKTOP_DIRECTORY_AS_DEFAULT, "Desktop directory (/home/fariha/Desktop)"); // a (PAResourceQtoS.SettingsOptionsProjectPage_USE_YOUR_DESKTOP_DIRECTORY_AS_DEFAULT)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,192 MB. GUI used memory: 96 MB. Current time: 10/13/26, 7:23:55 PM BDT
+selectRadioButton(PAResourceQtoS.SettingsOptionsProjectPage_USE_YOUR_DESKTOP_DIRECTORY_AS_DEFAULT, "Desktop directory (/home/fariha/Desktop)"); // a (PAResourceQtoS.SettingsOptionsProjectPage_USE_YOUR_DESKTOP_DIRECTORY_AS_DEFAULT)
+selectRadioButton(PAResourceQtoS.SettingsOptionsProjectPage_USE_YOUR_DESKTOP_DIRECTORY_AS_DEFAULT, "Desktop directory (/home/fariha/Desktop)"); // a (PAResourceQtoS.SettingsOptionsProjectPage_USE_YOUR_DESKTOP_DIRECTORY_AS_DEFAULT)
+selectRadioButton(PAResourceQtoS.SettingsOptionsProjectPage_SPECIFY_DIRECTORY_AS_DEFAULT_PROJECT, "Specify project directory:"); // a (PAResourceQtoS.SettingsOptionsProjectPage_SPECIFY_DIRECTORY_AS_DEFAULT_PROJECT)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,192 MB. GUI used memory: 97 MB. Current time: 10/13/26, 7:24:35 PM BDT
+// Elapsed time: 40 seconds
+setText(PAResourceQtoS.SettingsOptionsProjectPage_SPECIFY_DIRECTORY_AS_DEFAULT_PROJECT_DIRECTORY, "/home/fariha/Documents/apb_verification_project"); // ac (PAResourceQtoS.SettingsOptionsProjectPage_SPECIFY_DIRECTORY_AS_DEFAULT_PROJECT_DIRECTORY)
+selectButton(RDIResource.BaseDialog_APPLY, "Apply", "Settings"); // f (RDIResource.BaseDialog_APPLY)
+// [GUI Memory]: 158 MB (+18542kb) [00:05:27]
+selectButton(RDIResource.BaseDialog_APPLY, "Apply", "Settings"); // f (RDIResource.BaseDialog_APPLY)
+// WARNING: HEventQueue.dispatchEvent() is taking  1073 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1076 ms.
+selectButton(PAResourceQtoS.SettingsDialog_RESTORE, "Restore...", "Settings"); // a (PAResourceQtoS.SettingsDialog_RESTORE)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Restore Vivado Settings"); // f (RDIResource.BaseDialog_OK)
+selectButton("OptionPane.button", "Yes", "Vivado Settings"); // JButton (OptionPane.button)
+selectButton("OptionPane.button", "OK", "Restart Vivado"); // JButton (OptionPane.button)
+dismissDialog("Restore Vivado Settings"); // t (dialog1)
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ah (PAResourceItoN.MainMenuMgr_VIEW, View)
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // ah (PAResourceItoN.MainMenuMgr_VIEW, View)
+selectMenu(PAResourceItoN.MainMenuMgr_RUN, "Run"); // ah (PAResourceItoN.MainMenuMgr_RUN, Run)
+dismissMenu(PAResourceItoN.MainMenuMgr_RUN, "Run"); // ah (PAResourceItoN.MainMenuMgr_RUN, Run)
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,199 MB. GUI used memory: 97 MB. Current time: 10/13/26, 7:25:15 PM BDT
+// Elapsed time: 32 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ah (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ah (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // am (RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, Custom Commands)
+selectMenuItem(RDIResourceCommand.RDICommands_SETTINGS, "Settings..."); // ap (RDIResourceCommand.RDICommands_SETTINGS, settings_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// WARNING: HEventQueue.dispatchEvent() is taking  2785 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,199 MB. GUI used memory: 105 MB. Current time: 10/13/26, 7:25:55 PM BDT
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Project]", 0, false); // s (PAResourceQtoS.SettingsDialog_OPTIONS_TREE, Options Tree)
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Project]", 0, false, false, false, false, false, true); // s (PAResourceQtoS.SettingsDialog_OPTIONS_TREE, Options Tree) - Double Click
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Project]", 0, false); // s (PAResourceQtoS.SettingsDialog_OPTIONS_TREE, Options Tree)
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Project]", 0, false, false, false, false, false, true); // s (PAResourceQtoS.SettingsDialog_OPTIONS_TREE, Options Tree) - Double Click
+selectCheckBox(PAResourceQtoS.SettingsOptionsProjectPage_RECORD_TCL_COMMANDS_FOR_HIGHLIGHT, "Record Tcl commands for Highlight and Mark actions on netlist objects", true); // f (PAResourceQtoS.SettingsOptionsProjectPage_RECORD_TCL_COMMANDS_FOR_HIGHLIGHT): TRUE
+selectCheckBox(PAResourceQtoS.SettingsOptionsProjectPage_ENABLE_RPM_SUPPORT_IN_GUI, "Enable RPM support in Vivado GUI", true); // f (PAResourceQtoS.SettingsOptionsProjectPage_ENABLE_RPM_SUPPORT_IN_GUI): TRUE
+selectButton(RDIResource.BaseDialog_APPLY, "Apply", "Settings"); // f (RDIResource.BaseDialog_APPLY)
+selectButton(RDIResource.BaseDialog_APPLY, "Apply", "Settings"); // f (RDIResource.BaseDialog_APPLY)
+selectButton(PAResourceQtoS.SettingsDialog_RESTORE, "Restore...", "Settings"); // a (PAResourceQtoS.SettingsDialog_RESTORE)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Restore Vivado Settings"); // f (RDIResource.BaseDialog_OK)
+selectButton("OptionPane.button", "Yes", "Vivado Settings"); // JButton (OptionPane.button)
+selectButton("OptionPane.button", "OK", "Restart Vivado"); // JButton (OptionPane.button)
+dismissDialog("Restore Vivado Settings"); // t (dialog2)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+dismissMenu(RDIResource.MainWinMenuMgr_LAYOUT, "Layout"); // ah (RDIResource.MainWinMenuMgr_LAYOUT, Layout)
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ah (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,199 MB. GUI used memory: 105 MB. Current time: 10/13/26, 7:26:35 PM BDT
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ah (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ah (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ah (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ah (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ah (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ah (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ah (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // am (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenuItem(PAResourceCommand.PACommandNames_VIEW_LOG_FILE, "Open Log File"); // ap (PAResourceCommand.PACommandNames_VIEW_LOG_FILE, view_log_file_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ah (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_VIEW_LOG_FILE
+// [Engine Memory]: 2,220 MB (+17167kb) [00:07:42]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,241 MB. GUI used memory: 106 MB. Current time: 10/13/26, 7:26:55 PM BDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,248 MB. GUI used memory: 106 MB. Current time: 10/13/26, 7:27:15 PM BDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,248 MB. GUI used memory: 106 MB. Current time: 10/13/26, 7:27:55 PM BDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,248 MB. GUI used memory: 106 MB. Current time: 10/13/26, 7:28:35 PM BDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,248 MB. GUI used memory: 106 MB. Current time: 10/13/26, 7:29:15 PM BDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,248 MB. GUI used memory: 106 MB. Current time: 10/13/26, 7:29:55 PM BDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,248 MB. GUI used memory: 106 MB. Current time: 10/13/26, 7:30:35 PM BDT

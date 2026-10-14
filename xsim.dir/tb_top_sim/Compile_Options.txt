@@ -1,0 +1,1 @@
+-cc_type "sbct" "tb_top" -s "tb_top_sim" 

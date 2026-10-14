@@ -1,0 +1,21 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_interface.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_transaction.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_coverage.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_generator.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_driver.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_monitor.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_scoreboard.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_environment.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_base_test.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_reset_test.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_write_test.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_read_test.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_back_to_back_test.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_error_test.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_overwrite_test.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_wait_test.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_protocol_test.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_v3_sram.sv" into library work
+INFO: [VRFC 10-311] analyzing module apb_v3_sram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/fariha/Documents/apb_verification_project/apb_tb_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_top

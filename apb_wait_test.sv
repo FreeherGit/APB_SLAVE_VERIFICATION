@@ -15,12 +15,12 @@ class apb_wait_test #(
     logic [DATA_WIDTH-1:0] rdata;
     logic error;
 
-    function new(
-        virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif
-    );
-        super.new(vif);
-    endfunction
-
+function new(
+    virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif,
+    apb_coverage #(ADDR_WIDTH, DATA_WIDTH, 64) shared_cov = null
+);
+    super.new(vif, shared_cov);
+endfunction
 
     // Monitor APB access and count every stalled cycle.
     task monitor_wait_states();

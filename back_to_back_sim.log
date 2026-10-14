@@ -1,0 +1,1370 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Oct 14 14:27:21 2026
+# Process ID         : 4079886
+# Current directory  : /home/fariha/Documents/apb_verification_project
+# Command line       : xsim -log back_to_back_sim.log -mode tcl -source {xsim.dir/tb_top_sim/xsim_script.tcl}
+# Log file           : /home/fariha/Documents/apb_verification_project/back_to_back_sim.log
+# Journal file       : /home/fariha/Documents/apb_verification_project/xsim.jou
+# Running On         : vlsi-vivado
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
+# CPU Frequency      : 4000.016 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 41875 MB
+# Swap memory        : 27648 MB
+# Total Virtual      : 69524 MB
+# Available Virtual  : 59017 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_top_sim/xsim_script.tcl
+# xsim {tb_top_sim} -testplusarg TEST=back_to_back -wdb {back_to_back_apb_wave.wdb} -cov_db_name back_to_back -autoloadwcfg -tclbatch {back_to_back_cov.tcl} -onfinish stop
+Time resolution is 1 ps
+source back_to_back_cov.tcl
+## run all
+
+====================================
+ APB SLAVE VERIFICATION TESTBENCH
+ ADDR_WIDTH = 32
+ DATA_WIDTH = 32
+ Selected test = back_to_back
+====================================
+
+========================================
+Starting APB test
+ADDR_WIDTH = 32
+DATA_WIDTH = 32
+========================================
+
+==========================================
+        APB BACK-TO-BACK TEST
+==========================================
+Memory words: 64
+
+PHASE 1: Back-to-back writes
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000000
+[READY] Time=80000 | Type=WRITE | Addr=0x00000000 | Wait cycles=0
+[COVERAGE] Transfer=1 Type=WRITE Addr=0x00000000 Error=0 Wait=0
+[MONITOR] TRANSFER #1 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000000 data=a5000000
+WRITE PASS: Address=0x0, Data=0xa5000000
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000004
+[WAIT] Time=110000 | Type=WRITE | Addr=0x00000004 | Stalled cycle=1
+[READY] Time=120000 | Type=WRITE | Addr=0x00000004 | Wait cycles=1
+[COVERAGE] Transfer=2 Type=WRITE Addr=0x00000004 Error=0 Wait=1
+[MONITOR] TRANSFER #2 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000004 data=a5000001
+WRITE PASS: Address=0x4, Data=0xa5000001
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000008
+[WAIT] Time=150000 | Type=WRITE | Addr=0x00000008 | Stalled cycle=1
+[READY] Time=160000 | Type=WRITE | Addr=0x00000008 | Wait cycles=1
+[COVERAGE] Transfer=3 Type=WRITE Addr=0x00000008 Error=0 Wait=1
+[MONITOR] TRANSFER #3 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000008 data=a5000002
+WRITE PASS: Address=0x8, Data=0xa5000002
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000000c
+[WAIT] Time=190000 | Type=WRITE | Addr=0x0000000c | Stalled cycle=1
+[WAIT] Time=200000 | Type=WRITE | Addr=0x0000000c | Stalled cycle=2
+[READY] Time=210000 | Type=WRITE | Addr=0x0000000c | Wait cycles=2
+[COVERAGE] Transfer=4 Type=WRITE Addr=0x0000000c Error=0 Wait=2
+[MONITOR] TRANSFER #4 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000000c data=a5000003
+WRITE PASS: Address=0xc, Data=0xa5000003
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000010
+[WAIT] Time=240000 | Type=WRITE | Addr=0x00000010 | Stalled cycle=1
+[WAIT] Time=250000 | Type=WRITE | Addr=0x00000010 | Stalled cycle=2
+[READY] Time=260000 | Type=WRITE | Addr=0x00000010 | Wait cycles=2
+[COVERAGE] Transfer=5 Type=WRITE Addr=0x00000010 Error=0 Wait=2
+[MONITOR] TRANSFER #5 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000010 data=a5000004
+WRITE PASS: Address=0x10, Data=0xa5000004
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000014
+[WAIT] Time=290000 | Type=WRITE | Addr=0x00000014 | Stalled cycle=1
+[WAIT] Time=300000 | Type=WRITE | Addr=0x00000014 | Stalled cycle=2
+[WAIT] Time=310000 | Type=WRITE | Addr=0x00000014 | Stalled cycle=3
+[WAIT] Time=320000 | Type=WRITE | Addr=0x00000014 | Stalled cycle=4
+[WAIT] Time=330000 | Type=WRITE | Addr=0x00000014 | Stalled cycle=5
+[READY] Time=340000 | Type=WRITE | Addr=0x00000014 | Wait cycles=5
+[COVERAGE] Transfer=6 Type=WRITE Addr=0x00000014 Error=0 Wait=5
+[MONITOR] TRANSFER #6 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000014 data=a5000005
+WRITE PASS: Address=0x14, Data=0xa5000005
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000018
+[WAIT] Time=370000 | Type=WRITE | Addr=0x00000018 | Stalled cycle=1
+[WAIT] Time=380000 | Type=WRITE | Addr=0x00000018 | Stalled cycle=2
+[WAIT] Time=390000 | Type=WRITE | Addr=0x00000018 | Stalled cycle=3
+[WAIT] Time=400000 | Type=WRITE | Addr=0x00000018 | Stalled cycle=4
+[READY] Time=410000 | Type=WRITE | Addr=0x00000018 | Wait cycles=4
+[COVERAGE] Transfer=7 Type=WRITE Addr=0x00000018 Error=0 Wait=4
+[MONITOR] TRANSFER #7 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000018 data=a5000006
+WRITE PASS: Address=0x18, Data=0xa5000006
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000001c
+[WAIT] Time=440000 | Type=WRITE | Addr=0x0000001c | Stalled cycle=1
+[WAIT] Time=450000 | Type=WRITE | Addr=0x0000001c | Stalled cycle=2
+[READY] Time=460000 | Type=WRITE | Addr=0x0000001c | Wait cycles=2
+[COVERAGE] Transfer=8 Type=WRITE Addr=0x0000001c Error=0 Wait=2
+[MONITOR] TRANSFER #8 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000001c data=a5000007
+WRITE PASS: Address=0x1c, Data=0xa5000007
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000020
+[WAIT] Time=490000 | Type=WRITE | Addr=0x00000020 | Stalled cycle=1
+[WAIT] Time=500000 | Type=WRITE | Addr=0x00000020 | Stalled cycle=2
+[WAIT] Time=510000 | Type=WRITE | Addr=0x00000020 | Stalled cycle=3
+[WAIT] Time=520000 | Type=WRITE | Addr=0x00000020 | Stalled cycle=4
+[READY] Time=530000 | Type=WRITE | Addr=0x00000020 | Wait cycles=4
+[COVERAGE] Transfer=9 Type=WRITE Addr=0x00000020 Error=0 Wait=4
+[MONITOR] TRANSFER #9 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000020 data=a5000008
+WRITE PASS: Address=0x20, Data=0xa5000008
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000024
+[WAIT] Time=560000 | Type=WRITE | Addr=0x00000024 | Stalled cycle=1
+[WAIT] Time=570000 | Type=WRITE | Addr=0x00000024 | Stalled cycle=2
+[WAIT] Time=580000 | Type=WRITE | Addr=0x00000024 | Stalled cycle=3
+[WAIT] Time=590000 | Type=WRITE | Addr=0x00000024 | Stalled cycle=4
+[READY] Time=600000 | Type=WRITE | Addr=0x00000024 | Wait cycles=4
+[COVERAGE] Transfer=10 Type=WRITE Addr=0x00000024 Error=0 Wait=4
+[MONITOR] TRANSFER #10 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000024 data=a5000009
+WRITE PASS: Address=0x24, Data=0xa5000009
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000028
+[WAIT] Time=630000 | Type=WRITE | Addr=0x00000028 | Stalled cycle=1
+[WAIT] Time=640000 | Type=WRITE | Addr=0x00000028 | Stalled cycle=2
+[READY] Time=650000 | Type=WRITE | Addr=0x00000028 | Wait cycles=2
+[COVERAGE] Transfer=11 Type=WRITE Addr=0x00000028 Error=0 Wait=2
+[MONITOR] TRANSFER #11 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000028 data=a500000a
+WRITE PASS: Address=0x28, Data=0xa500000a
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000002c
+[WAIT] Time=680000 | Type=WRITE | Addr=0x0000002c | Stalled cycle=1
+[WAIT] Time=690000 | Type=WRITE | Addr=0x0000002c | Stalled cycle=2
+[WAIT] Time=700000 | Type=WRITE | Addr=0x0000002c | Stalled cycle=3
+[WAIT] Time=710000 | Type=WRITE | Addr=0x0000002c | Stalled cycle=4
+[WAIT] Time=720000 | Type=WRITE | Addr=0x0000002c | Stalled cycle=5
+[READY] Time=730000 | Type=WRITE | Addr=0x0000002c | Wait cycles=5
+[COVERAGE] Transfer=12 Type=WRITE Addr=0x0000002c Error=0 Wait=5
+[MONITOR] TRANSFER #12 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000002c data=a500000b
+WRITE PASS: Address=0x2c, Data=0xa500000b
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000030
+[WAIT] Time=760000 | Type=WRITE | Addr=0x00000030 | Stalled cycle=1
+[WAIT] Time=770000 | Type=WRITE | Addr=0x00000030 | Stalled cycle=2
+[WAIT] Time=780000 | Type=WRITE | Addr=0x00000030 | Stalled cycle=3
+[WAIT] Time=790000 | Type=WRITE | Addr=0x00000030 | Stalled cycle=4
+[READY] Time=800000 | Type=WRITE | Addr=0x00000030 | Wait cycles=4
+[COVERAGE] Transfer=13 Type=WRITE Addr=0x00000030 Error=0 Wait=4
+[MONITOR] TRANSFER #13 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000030 data=a500000c
+WRITE PASS: Address=0x30, Data=0xa500000c
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000034
+[WAIT] Time=830000 | Type=WRITE | Addr=0x00000034 | Stalled cycle=1
+[WAIT] Time=840000 | Type=WRITE | Addr=0x00000034 | Stalled cycle=2
+[WAIT] Time=850000 | Type=WRITE | Addr=0x00000034 | Stalled cycle=3
+[WAIT] Time=860000 | Type=WRITE | Addr=0x00000034 | Stalled cycle=4
+[WAIT] Time=870000 | Type=WRITE | Addr=0x00000034 | Stalled cycle=5
+[READY] Time=880000 | Type=WRITE | Addr=0x00000034 | Wait cycles=5
+[COVERAGE] Transfer=14 Type=WRITE Addr=0x00000034 Error=0 Wait=5
+[MONITOR] TRANSFER #14 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000034 data=a500000d
+WRITE PASS: Address=0x34, Data=0xa500000d
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000038
+[WAIT] Time=910000 | Type=WRITE | Addr=0x00000038 | Stalled cycle=1
+[WAIT] Time=920000 | Type=WRITE | Addr=0x00000038 | Stalled cycle=2
+[WAIT] Time=930000 | Type=WRITE | Addr=0x00000038 | Stalled cycle=3
+[WAIT] Time=940000 | Type=WRITE | Addr=0x00000038 | Stalled cycle=4
+[WAIT] Time=950000 | Type=WRITE | Addr=0x00000038 | Stalled cycle=5
+[READY] Time=960000 | Type=WRITE | Addr=0x00000038 | Wait cycles=5
+[COVERAGE] Transfer=15 Type=WRITE Addr=0x00000038 Error=0 Wait=5
+[MONITOR] TRANSFER #15 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000038 data=a500000e
+WRITE PASS: Address=0x38, Data=0xa500000e
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000003c
+[WAIT] Time=990000 | Type=WRITE | Addr=0x0000003c | Stalled cycle=1
+[WAIT] Time=1000000 | Type=WRITE | Addr=0x0000003c | Stalled cycle=2
+[WAIT] Time=1010000 | Type=WRITE | Addr=0x0000003c | Stalled cycle=3
+[WAIT] Time=1020000 | Type=WRITE | Addr=0x0000003c | Stalled cycle=4
+[WAIT] Time=1030000 | Type=WRITE | Addr=0x0000003c | Stalled cycle=5
+[READY] Time=1040000 | Type=WRITE | Addr=0x0000003c | Wait cycles=5
+[COVERAGE] Transfer=16 Type=WRITE Addr=0x0000003c Error=0 Wait=5
+[MONITOR] TRANSFER #16 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000003c data=a500000f
+WRITE PASS: Address=0x3c, Data=0xa500000f
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000040
+[WAIT] Time=1070000 | Type=WRITE | Addr=0x00000040 | Stalled cycle=1
+[WAIT] Time=1080000 | Type=WRITE | Addr=0x00000040 | Stalled cycle=2
+[WAIT] Time=1090000 | Type=WRITE | Addr=0x00000040 | Stalled cycle=3
+[WAIT] Time=1100000 | Type=WRITE | Addr=0x00000040 | Stalled cycle=4
+[READY] Time=1110000 | Type=WRITE | Addr=0x00000040 | Wait cycles=4
+[COVERAGE] Transfer=17 Type=WRITE Addr=0x00000040 Error=0 Wait=4
+[MONITOR] TRANSFER #17 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000040 data=a5000010
+WRITE PASS: Address=0x40, Data=0xa5000010
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000044
+[WAIT] Time=1140000 | Type=WRITE | Addr=0x00000044 | Stalled cycle=1
+[WAIT] Time=1150000 | Type=WRITE | Addr=0x00000044 | Stalled cycle=2
+[WAIT] Time=1160000 | Type=WRITE | Addr=0x00000044 | Stalled cycle=3
+[READY] Time=1170000 | Type=WRITE | Addr=0x00000044 | Wait cycles=3
+[COVERAGE] Transfer=18 Type=WRITE Addr=0x00000044 Error=0 Wait=3
+[MONITOR] TRANSFER #18 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000044 data=a5000011
+WRITE PASS: Address=0x44, Data=0xa5000011
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000048
+[WAIT] Time=1200000 | Type=WRITE | Addr=0x00000048 | Stalled cycle=1
+[WAIT] Time=1210000 | Type=WRITE | Addr=0x00000048 | Stalled cycle=2
+[WAIT] Time=1220000 | Type=WRITE | Addr=0x00000048 | Stalled cycle=3
+[READY] Time=1230000 | Type=WRITE | Addr=0x00000048 | Wait cycles=3
+[COVERAGE] Transfer=19 Type=WRITE Addr=0x00000048 Error=0 Wait=3
+[MONITOR] TRANSFER #19 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000048 data=a5000012
+WRITE PASS: Address=0x48, Data=0xa5000012
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000004c
+[WAIT] Time=1260000 | Type=WRITE | Addr=0x0000004c | Stalled cycle=1
+[WAIT] Time=1270000 | Type=WRITE | Addr=0x0000004c | Stalled cycle=2
+[WAIT] Time=1280000 | Type=WRITE | Addr=0x0000004c | Stalled cycle=3
+[WAIT] Time=1290000 | Type=WRITE | Addr=0x0000004c | Stalled cycle=4
+[WAIT] Time=1300000 | Type=WRITE | Addr=0x0000004c | Stalled cycle=5
+[READY] Time=1310000 | Type=WRITE | Addr=0x0000004c | Wait cycles=5
+[COVERAGE] Transfer=20 Type=WRITE Addr=0x0000004c Error=0 Wait=5
+[MONITOR] TRANSFER #20 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000004c data=a5000013
+WRITE PASS: Address=0x4c, Data=0xa5000013
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000050
+[WAIT] Time=1340000 | Type=WRITE | Addr=0x00000050 | Stalled cycle=1
+[WAIT] Time=1350000 | Type=WRITE | Addr=0x00000050 | Stalled cycle=2
+[WAIT] Time=1360000 | Type=WRITE | Addr=0x00000050 | Stalled cycle=3
+[WAIT] Time=1370000 | Type=WRITE | Addr=0x00000050 | Stalled cycle=4
+[READY] Time=1380000 | Type=WRITE | Addr=0x00000050 | Wait cycles=4
+[COVERAGE] Transfer=21 Type=WRITE Addr=0x00000050 Error=0 Wait=4
+[MONITOR] TRANSFER #21 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000050 data=a5000014
+WRITE PASS: Address=0x50, Data=0xa5000014
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000054
+[WAIT] Time=1410000 | Type=WRITE | Addr=0x00000054 | Stalled cycle=1
+[WAIT] Time=1420000 | Type=WRITE | Addr=0x00000054 | Stalled cycle=2
+[WAIT] Time=1430000 | Type=WRITE | Addr=0x00000054 | Stalled cycle=3
+[WAIT] Time=1440000 | Type=WRITE | Addr=0x00000054 | Stalled cycle=4
+[WAIT] Time=1450000 | Type=WRITE | Addr=0x00000054 | Stalled cycle=5
+[READY] Time=1460000 | Type=WRITE | Addr=0x00000054 | Wait cycles=5
+[COVERAGE] Transfer=22 Type=WRITE Addr=0x00000054 Error=0 Wait=5
+[MONITOR] TRANSFER #22 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000054 data=a5000015
+WRITE PASS: Address=0x54, Data=0xa5000015
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000058
+[WAIT] Time=1490000 | Type=WRITE | Addr=0x00000058 | Stalled cycle=1
+[WAIT] Time=1500000 | Type=WRITE | Addr=0x00000058 | Stalled cycle=2
+[WAIT] Time=1510000 | Type=WRITE | Addr=0x00000058 | Stalled cycle=3
+[READY] Time=1520000 | Type=WRITE | Addr=0x00000058 | Wait cycles=3
+[COVERAGE] Transfer=23 Type=WRITE Addr=0x00000058 Error=0 Wait=3
+[MONITOR] TRANSFER #23 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000058 data=a5000016
+WRITE PASS: Address=0x58, Data=0xa5000016
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000005c
+[WAIT] Time=1550000 | Type=WRITE | Addr=0x0000005c | Stalled cycle=1
+[WAIT] Time=1560000 | Type=WRITE | Addr=0x0000005c | Stalled cycle=2
+[READY] Time=1570000 | Type=WRITE | Addr=0x0000005c | Wait cycles=2
+[COVERAGE] Transfer=24 Type=WRITE Addr=0x0000005c Error=0 Wait=2
+[MONITOR] TRANSFER #24 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000005c data=a5000017
+WRITE PASS: Address=0x5c, Data=0xa5000017
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000060
+[WAIT] Time=1600000 | Type=WRITE | Addr=0x00000060 | Stalled cycle=1
+[WAIT] Time=1610000 | Type=WRITE | Addr=0x00000060 | Stalled cycle=2
+[WAIT] Time=1620000 | Type=WRITE | Addr=0x00000060 | Stalled cycle=3
+[WAIT] Time=1630000 | Type=WRITE | Addr=0x00000060 | Stalled cycle=4
+[READY] Time=1640000 | Type=WRITE | Addr=0x00000060 | Wait cycles=4
+[COVERAGE] Transfer=25 Type=WRITE Addr=0x00000060 Error=0 Wait=4
+[MONITOR] TRANSFER #25 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000060 data=a5000018
+WRITE PASS: Address=0x60, Data=0xa5000018
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000064
+[WAIT] Time=1670000 | Type=WRITE | Addr=0x00000064 | Stalled cycle=1
+[WAIT] Time=1680000 | Type=WRITE | Addr=0x00000064 | Stalled cycle=2
+[WAIT] Time=1690000 | Type=WRITE | Addr=0x00000064 | Stalled cycle=3
+[WAIT] Time=1700000 | Type=WRITE | Addr=0x00000064 | Stalled cycle=4
+[WAIT] Time=1710000 | Type=WRITE | Addr=0x00000064 | Stalled cycle=5
+[READY] Time=1720000 | Type=WRITE | Addr=0x00000064 | Wait cycles=5
+[COVERAGE] Transfer=26 Type=WRITE Addr=0x00000064 Error=0 Wait=5
+[MONITOR] TRANSFER #26 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000064 data=a5000019
+WRITE PASS: Address=0x64, Data=0xa5000019
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000068
+[WAIT] Time=1750000 | Type=WRITE | Addr=0x00000068 | Stalled cycle=1
+[WAIT] Time=1760000 | Type=WRITE | Addr=0x00000068 | Stalled cycle=2
+[WAIT] Time=1770000 | Type=WRITE | Addr=0x00000068 | Stalled cycle=3
+[WAIT] Time=1780000 | Type=WRITE | Addr=0x00000068 | Stalled cycle=4
+[WAIT] Time=1790000 | Type=WRITE | Addr=0x00000068 | Stalled cycle=5
+[READY] Time=1800000 | Type=WRITE | Addr=0x00000068 | Wait cycles=5
+[COVERAGE] Transfer=27 Type=WRITE Addr=0x00000068 Error=0 Wait=5
+[MONITOR] TRANSFER #27 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000068 data=a500001a
+WRITE PASS: Address=0x68, Data=0xa500001a
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000006c
+[WAIT] Time=1830000 | Type=WRITE | Addr=0x0000006c | Stalled cycle=1
+[WAIT] Time=1840000 | Type=WRITE | Addr=0x0000006c | Stalled cycle=2
+[WAIT] Time=1850000 | Type=WRITE | Addr=0x0000006c | Stalled cycle=3
+[WAIT] Time=1860000 | Type=WRITE | Addr=0x0000006c | Stalled cycle=4
+[READY] Time=1870000 | Type=WRITE | Addr=0x0000006c | Wait cycles=4
+[COVERAGE] Transfer=28 Type=WRITE Addr=0x0000006c Error=0 Wait=4
+[MONITOR] TRANSFER #28 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000006c data=a500001b
+WRITE PASS: Address=0x6c, Data=0xa500001b
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000070
+[WAIT] Time=1900000 | Type=WRITE | Addr=0x00000070 | Stalled cycle=1
+[WAIT] Time=1910000 | Type=WRITE | Addr=0x00000070 | Stalled cycle=2
+[WAIT] Time=1920000 | Type=WRITE | Addr=0x00000070 | Stalled cycle=3
+[WAIT] Time=1930000 | Type=WRITE | Addr=0x00000070 | Stalled cycle=4
+[WAIT] Time=1940000 | Type=WRITE | Addr=0x00000070 | Stalled cycle=5
+[READY] Time=1950000 | Type=WRITE | Addr=0x00000070 | Wait cycles=5
+[COVERAGE] Transfer=29 Type=WRITE Addr=0x00000070 Error=0 Wait=5
+[MONITOR] TRANSFER #29 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000070 data=a500001c
+WRITE PASS: Address=0x70, Data=0xa500001c
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000074
+[WAIT] Time=1980000 | Type=WRITE | Addr=0x00000074 | Stalled cycle=1
+[READY] Time=1990000 | Type=WRITE | Addr=0x00000074 | Wait cycles=1
+[COVERAGE] Transfer=30 Type=WRITE Addr=0x00000074 Error=0 Wait=1
+[MONITOR] TRANSFER #30 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000074 data=a500001d
+WRITE PASS: Address=0x74, Data=0xa500001d
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000078
+[WAIT] Time=2020000 | Type=WRITE | Addr=0x00000078 | Stalled cycle=1
+[WAIT] Time=2030000 | Type=WRITE | Addr=0x00000078 | Stalled cycle=2
+[READY] Time=2040000 | Type=WRITE | Addr=0x00000078 | Wait cycles=2
+[COVERAGE] Transfer=31 Type=WRITE Addr=0x00000078 Error=0 Wait=2
+[MONITOR] TRANSFER #31 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000078 data=a500001e
+WRITE PASS: Address=0x78, Data=0xa500001e
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000007c
+[WAIT] Time=2070000 | Type=WRITE | Addr=0x0000007c | Stalled cycle=1
+[WAIT] Time=2080000 | Type=WRITE | Addr=0x0000007c | Stalled cycle=2
+[WAIT] Time=2090000 | Type=WRITE | Addr=0x0000007c | Stalled cycle=3
+[WAIT] Time=2100000 | Type=WRITE | Addr=0x0000007c | Stalled cycle=4
+[WAIT] Time=2110000 | Type=WRITE | Addr=0x0000007c | Stalled cycle=5
+[READY] Time=2120000 | Type=WRITE | Addr=0x0000007c | Wait cycles=5
+[COVERAGE] Transfer=32 Type=WRITE Addr=0x0000007c Error=0 Wait=5
+[MONITOR] TRANSFER #32 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000007c data=a500001f
+WRITE PASS: Address=0x7c, Data=0xa500001f
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000080
+[WAIT] Time=2150000 | Type=WRITE | Addr=0x00000080 | Stalled cycle=1
+[WAIT] Time=2160000 | Type=WRITE | Addr=0x00000080 | Stalled cycle=2
+[WAIT] Time=2170000 | Type=WRITE | Addr=0x00000080 | Stalled cycle=3
+[WAIT] Time=2180000 | Type=WRITE | Addr=0x00000080 | Stalled cycle=4
+[READY] Time=2190000 | Type=WRITE | Addr=0x00000080 | Wait cycles=4
+[COVERAGE] Transfer=33 Type=WRITE Addr=0x00000080 Error=0 Wait=4
+[MONITOR] TRANSFER #33 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000080 data=a5000020
+WRITE PASS: Address=0x80, Data=0xa5000020
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000084
+[WAIT] Time=2220000 | Type=WRITE | Addr=0x00000084 | Stalled cycle=1
+[WAIT] Time=2230000 | Type=WRITE | Addr=0x00000084 | Stalled cycle=2
+[WAIT] Time=2240000 | Type=WRITE | Addr=0x00000084 | Stalled cycle=3
+[READY] Time=2250000 | Type=WRITE | Addr=0x00000084 | Wait cycles=3
+[COVERAGE] Transfer=34 Type=WRITE Addr=0x00000084 Error=0 Wait=3
+[MONITOR] TRANSFER #34 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000084 data=a5000021
+WRITE PASS: Address=0x84, Data=0xa5000021
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000088
+[WAIT] Time=2280000 | Type=WRITE | Addr=0x00000088 | Stalled cycle=1
+[WAIT] Time=2290000 | Type=WRITE | Addr=0x00000088 | Stalled cycle=2
+[WAIT] Time=2300000 | Type=WRITE | Addr=0x00000088 | Stalled cycle=3
+[READY] Time=2310000 | Type=WRITE | Addr=0x00000088 | Wait cycles=3
+[COVERAGE] Transfer=35 Type=WRITE Addr=0x00000088 Error=0 Wait=3
+[MONITOR] TRANSFER #35 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000088 data=a5000022
+WRITE PASS: Address=0x88, Data=0xa5000022
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000008c
+[WAIT] Time=2340000 | Type=WRITE | Addr=0x0000008c | Stalled cycle=1
+[WAIT] Time=2350000 | Type=WRITE | Addr=0x0000008c | Stalled cycle=2
+[WAIT] Time=2360000 | Type=WRITE | Addr=0x0000008c | Stalled cycle=3
+[READY] Time=2370000 | Type=WRITE | Addr=0x0000008c | Wait cycles=3
+[COVERAGE] Transfer=36 Type=WRITE Addr=0x0000008c Error=0 Wait=3
+[MONITOR] TRANSFER #36 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000008c data=a5000023
+WRITE PASS: Address=0x8c, Data=0xa5000023
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000090
+[WAIT] Time=2400000 | Type=WRITE | Addr=0x00000090 | Stalled cycle=1
+[WAIT] Time=2410000 | Type=WRITE | Addr=0x00000090 | Stalled cycle=2
+[WAIT] Time=2420000 | Type=WRITE | Addr=0x00000090 | Stalled cycle=3
+[READY] Time=2430000 | Type=WRITE | Addr=0x00000090 | Wait cycles=3
+[COVERAGE] Transfer=37 Type=WRITE Addr=0x00000090 Error=0 Wait=3
+[MONITOR] TRANSFER #37 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000090 data=a5000024
+WRITE PASS: Address=0x90, Data=0xa5000024
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000094
+[WAIT] Time=2460000 | Type=WRITE | Addr=0x00000094 | Stalled cycle=1
+[READY] Time=2470000 | Type=WRITE | Addr=0x00000094 | Wait cycles=1
+[COVERAGE] Transfer=38 Type=WRITE Addr=0x00000094 Error=0 Wait=1
+[MONITOR] TRANSFER #38 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000094 data=a5000025
+WRITE PASS: Address=0x94, Data=0xa5000025
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000098
+[WAIT] Time=2500000 | Type=WRITE | Addr=0x00000098 | Stalled cycle=1
+[WAIT] Time=2510000 | Type=WRITE | Addr=0x00000098 | Stalled cycle=2
+[WAIT] Time=2520000 | Type=WRITE | Addr=0x00000098 | Stalled cycle=3
+[WAIT] Time=2530000 | Type=WRITE | Addr=0x00000098 | Stalled cycle=4
+[WAIT] Time=2540000 | Type=WRITE | Addr=0x00000098 | Stalled cycle=5
+[READY] Time=2550000 | Type=WRITE | Addr=0x00000098 | Wait cycles=5
+[COVERAGE] Transfer=39 Type=WRITE Addr=0x00000098 Error=0 Wait=5
+[MONITOR] TRANSFER #39 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000098 data=a5000026
+WRITE PASS: Address=0x98, Data=0xa5000026
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000009c
+[WAIT] Time=2580000 | Type=WRITE | Addr=0x0000009c | Stalled cycle=1
+[READY] Time=2590000 | Type=WRITE | Addr=0x0000009c | Wait cycles=1
+[COVERAGE] Transfer=40 Type=WRITE Addr=0x0000009c Error=0 Wait=1
+[MONITOR] TRANSFER #40 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000009c data=a5000027
+WRITE PASS: Address=0x9c, Data=0xa5000027
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000a0
+[WAIT] Time=2620000 | Type=WRITE | Addr=0x000000a0 | Stalled cycle=1
+[WAIT] Time=2630000 | Type=WRITE | Addr=0x000000a0 | Stalled cycle=2
+[WAIT] Time=2640000 | Type=WRITE | Addr=0x000000a0 | Stalled cycle=3
+[READY] Time=2650000 | Type=WRITE | Addr=0x000000a0 | Wait cycles=3
+[COVERAGE] Transfer=41 Type=WRITE Addr=0x000000a0 Error=0 Wait=3
+[MONITOR] TRANSFER #41 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000a0 data=a5000028
+WRITE PASS: Address=0xa0, Data=0xa5000028
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000a4
+[WAIT] Time=2680000 | Type=WRITE | Addr=0x000000a4 | Stalled cycle=1
+[READY] Time=2690000 | Type=WRITE | Addr=0x000000a4 | Wait cycles=1
+[COVERAGE] Transfer=42 Type=WRITE Addr=0x000000a4 Error=0 Wait=1
+[MONITOR] TRANSFER #42 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000a4 data=a5000029
+WRITE PASS: Address=0xa4, Data=0xa5000029
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000a8
+[WAIT] Time=2720000 | Type=WRITE | Addr=0x000000a8 | Stalled cycle=1
+[WAIT] Time=2730000 | Type=WRITE | Addr=0x000000a8 | Stalled cycle=2
+[WAIT] Time=2740000 | Type=WRITE | Addr=0x000000a8 | Stalled cycle=3
+[READY] Time=2750000 | Type=WRITE | Addr=0x000000a8 | Wait cycles=3
+[COVERAGE] Transfer=43 Type=WRITE Addr=0x000000a8 Error=0 Wait=3
+[MONITOR] TRANSFER #43 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000a8 data=a500002a
+WRITE PASS: Address=0xa8, Data=0xa500002a
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000ac
+[WAIT] Time=2780000 | Type=WRITE | Addr=0x000000ac | Stalled cycle=1
+[WAIT] Time=2790000 | Type=WRITE | Addr=0x000000ac | Stalled cycle=2
+[WAIT] Time=2800000 | Type=WRITE | Addr=0x000000ac | Stalled cycle=3
+[WAIT] Time=2810000 | Type=WRITE | Addr=0x000000ac | Stalled cycle=4
+[WAIT] Time=2820000 | Type=WRITE | Addr=0x000000ac | Stalled cycle=5
+[READY] Time=2830000 | Type=WRITE | Addr=0x000000ac | Wait cycles=5
+[COVERAGE] Transfer=44 Type=WRITE Addr=0x000000ac Error=0 Wait=5
+[MONITOR] TRANSFER #44 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000ac data=a500002b
+WRITE PASS: Address=0xac, Data=0xa500002b
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000b0
+[WAIT] Time=2860000 | Type=WRITE | Addr=0x000000b0 | Stalled cycle=1
+[READY] Time=2870000 | Type=WRITE | Addr=0x000000b0 | Wait cycles=1
+[COVERAGE] Transfer=45 Type=WRITE Addr=0x000000b0 Error=0 Wait=1
+[MONITOR] TRANSFER #45 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000b0 data=a500002c
+WRITE PASS: Address=0xb0, Data=0xa500002c
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000b4
+[WAIT] Time=2900000 | Type=WRITE | Addr=0x000000b4 | Stalled cycle=1
+[READY] Time=2910000 | Type=WRITE | Addr=0x000000b4 | Wait cycles=1
+[COVERAGE] Transfer=46 Type=WRITE Addr=0x000000b4 Error=0 Wait=1
+[MONITOR] TRANSFER #46 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000b4 data=a500002d
+WRITE PASS: Address=0xb4, Data=0xa500002d
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000b8
+[WAIT] Time=2940000 | Type=WRITE | Addr=0x000000b8 | Stalled cycle=1
+[WAIT] Time=2950000 | Type=WRITE | Addr=0x000000b8 | Stalled cycle=2
+[WAIT] Time=2960000 | Type=WRITE | Addr=0x000000b8 | Stalled cycle=3
+[WAIT] Time=2970000 | Type=WRITE | Addr=0x000000b8 | Stalled cycle=4
+[WAIT] Time=2980000 | Type=WRITE | Addr=0x000000b8 | Stalled cycle=5
+[READY] Time=2990000 | Type=WRITE | Addr=0x000000b8 | Wait cycles=5
+[COVERAGE] Transfer=47 Type=WRITE Addr=0x000000b8 Error=0 Wait=5
+[MONITOR] TRANSFER #47 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000b8 data=a500002e
+WRITE PASS: Address=0xb8, Data=0xa500002e
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000bc
+[WAIT] Time=3020000 | Type=WRITE | Addr=0x000000bc | Stalled cycle=1
+[WAIT] Time=3030000 | Type=WRITE | Addr=0x000000bc | Stalled cycle=2
+[WAIT] Time=3040000 | Type=WRITE | Addr=0x000000bc | Stalled cycle=3
+[READY] Time=3050000 | Type=WRITE | Addr=0x000000bc | Wait cycles=3
+[COVERAGE] Transfer=48 Type=WRITE Addr=0x000000bc Error=0 Wait=3
+[MONITOR] TRANSFER #48 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000bc data=a500002f
+WRITE PASS: Address=0xbc, Data=0xa500002f
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000c0
+[WAIT] Time=3080000 | Type=WRITE | Addr=0x000000c0 | Stalled cycle=1
+[WAIT] Time=3090000 | Type=WRITE | Addr=0x000000c0 | Stalled cycle=2
+[WAIT] Time=3100000 | Type=WRITE | Addr=0x000000c0 | Stalled cycle=3
+[READY] Time=3110000 | Type=WRITE | Addr=0x000000c0 | Wait cycles=3
+[COVERAGE] Transfer=49 Type=WRITE Addr=0x000000c0 Error=0 Wait=3
+[MONITOR] TRANSFER #49 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000c0 data=a5000030
+WRITE PASS: Address=0xc0, Data=0xa5000030
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000c4
+[WAIT] Time=3140000 | Type=WRITE | Addr=0x000000c4 | Stalled cycle=1
+[WAIT] Time=3150000 | Type=WRITE | Addr=0x000000c4 | Stalled cycle=2
+[READY] Time=3160000 | Type=WRITE | Addr=0x000000c4 | Wait cycles=2
+[COVERAGE] Transfer=50 Type=WRITE Addr=0x000000c4 Error=0 Wait=2
+[MONITOR] TRANSFER #50 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000c4 data=a5000031
+WRITE PASS: Address=0xc4, Data=0xa5000031
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000c8
+[WAIT] Time=3190000 | Type=WRITE | Addr=0x000000c8 | Stalled cycle=1
+[WAIT] Time=3200000 | Type=WRITE | Addr=0x000000c8 | Stalled cycle=2
+[WAIT] Time=3210000 | Type=WRITE | Addr=0x000000c8 | Stalled cycle=3
+[WAIT] Time=3220000 | Type=WRITE | Addr=0x000000c8 | Stalled cycle=4
+[READY] Time=3230000 | Type=WRITE | Addr=0x000000c8 | Wait cycles=4
+[COVERAGE] Transfer=51 Type=WRITE Addr=0x000000c8 Error=0 Wait=4
+[MONITOR] TRANSFER #51 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000c8 data=a5000032
+WRITE PASS: Address=0xc8, Data=0xa5000032
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000cc
+[WAIT] Time=3260000 | Type=WRITE | Addr=0x000000cc | Stalled cycle=1
+[WAIT] Time=3270000 | Type=WRITE | Addr=0x000000cc | Stalled cycle=2
+[WAIT] Time=3280000 | Type=WRITE | Addr=0x000000cc | Stalled cycle=3
+[READY] Time=3290000 | Type=WRITE | Addr=0x000000cc | Wait cycles=3
+[COVERAGE] Transfer=52 Type=WRITE Addr=0x000000cc Error=0 Wait=3
+[MONITOR] TRANSFER #52 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000cc data=a5000033
+WRITE PASS: Address=0xcc, Data=0xa5000033
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000d0
+[WAIT] Time=3320000 | Type=WRITE | Addr=0x000000d0 | Stalled cycle=1
+[READY] Time=3330000 | Type=WRITE | Addr=0x000000d0 | Wait cycles=1
+[COVERAGE] Transfer=53 Type=WRITE Addr=0x000000d0 Error=0 Wait=1
+[MONITOR] TRANSFER #53 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000d0 data=a5000034
+WRITE PASS: Address=0xd0, Data=0xa5000034
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000d4
+[WAIT] Time=3360000 | Type=WRITE | Addr=0x000000d4 | Stalled cycle=1
+[WAIT] Time=3370000 | Type=WRITE | Addr=0x000000d4 | Stalled cycle=2
+[WAIT] Time=3380000 | Type=WRITE | Addr=0x000000d4 | Stalled cycle=3
+[WAIT] Time=3390000 | Type=WRITE | Addr=0x000000d4 | Stalled cycle=4
+[WAIT] Time=3400000 | Type=WRITE | Addr=0x000000d4 | Stalled cycle=5
+[READY] Time=3410000 | Type=WRITE | Addr=0x000000d4 | Wait cycles=5
+[COVERAGE] Transfer=54 Type=WRITE Addr=0x000000d4 Error=0 Wait=5
+[MONITOR] TRANSFER #54 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000d4 data=a5000035
+WRITE PASS: Address=0xd4, Data=0xa5000035
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000d8
+[WAIT] Time=3440000 | Type=WRITE | Addr=0x000000d8 | Stalled cycle=1
+[WAIT] Time=3450000 | Type=WRITE | Addr=0x000000d8 | Stalled cycle=2
+[READY] Time=3460000 | Type=WRITE | Addr=0x000000d8 | Wait cycles=2
+[COVERAGE] Transfer=55 Type=WRITE Addr=0x000000d8 Error=0 Wait=2
+[MONITOR] TRANSFER #55 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000d8 data=a5000036
+WRITE PASS: Address=0xd8, Data=0xa5000036
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000dc
+[WAIT] Time=3490000 | Type=WRITE | Addr=0x000000dc | Stalled cycle=1
+[WAIT] Time=3500000 | Type=WRITE | Addr=0x000000dc | Stalled cycle=2
+[WAIT] Time=3510000 | Type=WRITE | Addr=0x000000dc | Stalled cycle=3
+[READY] Time=3520000 | Type=WRITE | Addr=0x000000dc | Wait cycles=3
+[COVERAGE] Transfer=56 Type=WRITE Addr=0x000000dc Error=0 Wait=3
+[MONITOR] TRANSFER #56 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000dc data=a5000037
+WRITE PASS: Address=0xdc, Data=0xa5000037
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000e0
+[WAIT] Time=3550000 | Type=WRITE | Addr=0x000000e0 | Stalled cycle=1
+[WAIT] Time=3560000 | Type=WRITE | Addr=0x000000e0 | Stalled cycle=2
+[WAIT] Time=3570000 | Type=WRITE | Addr=0x000000e0 | Stalled cycle=3
+[WAIT] Time=3580000 | Type=WRITE | Addr=0x000000e0 | Stalled cycle=4
+[WAIT] Time=3590000 | Type=WRITE | Addr=0x000000e0 | Stalled cycle=5
+[READY] Time=3600000 | Type=WRITE | Addr=0x000000e0 | Wait cycles=5
+[COVERAGE] Transfer=57 Type=WRITE Addr=0x000000e0 Error=0 Wait=5
+[MONITOR] TRANSFER #57 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000e0 data=a5000038
+WRITE PASS: Address=0xe0, Data=0xa5000038
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000e4
+[WAIT] Time=3630000 | Type=WRITE | Addr=0x000000e4 | Stalled cycle=1
+[WAIT] Time=3640000 | Type=WRITE | Addr=0x000000e4 | Stalled cycle=2
+[WAIT] Time=3650000 | Type=WRITE | Addr=0x000000e4 | Stalled cycle=3
+[READY] Time=3660000 | Type=WRITE | Addr=0x000000e4 | Wait cycles=3
+[COVERAGE] Transfer=58 Type=WRITE Addr=0x000000e4 Error=0 Wait=3
+[MONITOR] TRANSFER #58 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000e4 data=a5000039
+WRITE PASS: Address=0xe4, Data=0xa5000039
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000e8
+[WAIT] Time=3690000 | Type=WRITE | Addr=0x000000e8 | Stalled cycle=1
+[WAIT] Time=3700000 | Type=WRITE | Addr=0x000000e8 | Stalled cycle=2
+[READY] Time=3710000 | Type=WRITE | Addr=0x000000e8 | Wait cycles=2
+[COVERAGE] Transfer=59 Type=WRITE Addr=0x000000e8 Error=0 Wait=2
+[MONITOR] TRANSFER #59 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000e8 data=a500003a
+WRITE PASS: Address=0xe8, Data=0xa500003a
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000ec
+[WAIT] Time=3740000 | Type=WRITE | Addr=0x000000ec | Stalled cycle=1
+[WAIT] Time=3750000 | Type=WRITE | Addr=0x000000ec | Stalled cycle=2
+[WAIT] Time=3760000 | Type=WRITE | Addr=0x000000ec | Stalled cycle=3
+[READY] Time=3770000 | Type=WRITE | Addr=0x000000ec | Wait cycles=3
+[COVERAGE] Transfer=60 Type=WRITE Addr=0x000000ec Error=0 Wait=3
+[MONITOR] TRANSFER #60 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000ec data=a500003b
+WRITE PASS: Address=0xec, Data=0xa500003b
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000f0
+[WAIT] Time=3800000 | Type=WRITE | Addr=0x000000f0 | Stalled cycle=1
+[READY] Time=3810000 | Type=WRITE | Addr=0x000000f0 | Wait cycles=1
+[COVERAGE] Transfer=61 Type=WRITE Addr=0x000000f0 Error=0 Wait=1
+[MONITOR] TRANSFER #61 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000f0 data=a500003c
+WRITE PASS: Address=0xf0, Data=0xa500003c
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000f4
+[WAIT] Time=3840000 | Type=WRITE | Addr=0x000000f4 | Stalled cycle=1
+[READY] Time=3850000 | Type=WRITE | Addr=0x000000f4 | Wait cycles=1
+[COVERAGE] Transfer=62 Type=WRITE Addr=0x000000f4 Error=0 Wait=1
+[MONITOR] TRANSFER #62 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000f4 data=a500003d
+WRITE PASS: Address=0xf4, Data=0xa500003d
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000f8
+[WAIT] Time=3880000 | Type=WRITE | Addr=0x000000f8 | Stalled cycle=1
+[WAIT] Time=3890000 | Type=WRITE | Addr=0x000000f8 | Stalled cycle=2
+[WAIT] Time=3900000 | Type=WRITE | Addr=0x000000f8 | Stalled cycle=3
+[WAIT] Time=3910000 | Type=WRITE | Addr=0x000000f8 | Stalled cycle=4
+[READY] Time=3920000 | Type=WRITE | Addr=0x000000f8 | Wait cycles=4
+[COVERAGE] Transfer=63 Type=WRITE Addr=0x000000f8 Error=0 Wait=4
+[MONITOR] TRANSFER #63 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000f8 data=a500003e
+WRITE PASS: Address=0xf8, Data=0xa500003e
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x000000fc
+[WAIT] Time=3950000 | Type=WRITE | Addr=0x000000fc | Stalled cycle=1
+[WAIT] Time=3960000 | Type=WRITE | Addr=0x000000fc | Stalled cycle=2
+[WAIT] Time=3970000 | Type=WRITE | Addr=0x000000fc | Stalled cycle=3
+[WAIT] Time=3980000 | Type=WRITE | Addr=0x000000fc | Stalled cycle=4
+[WAIT] Time=3990000 | Type=WRITE | Addr=0x000000fc | Stalled cycle=5
+[READY] Time=4000000 | Type=WRITE | Addr=0x000000fc | Wait cycles=5
+[COVERAGE] Transfer=64 Type=WRITE Addr=0x000000fc Error=0 Wait=5
+[MONITOR] TRANSFER #64 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=000000fc data=a500003f
+WRITE PASS: Address=0xfc, Data=0xa500003f
+
+PHASE 2: Back-to-back reads
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000000
+[WAIT] Time=4030000 | Type= READ | Addr=0x00000000 | Stalled cycle=1
+[WAIT] Time=4040000 | Type= READ | Addr=0x00000000 | Stalled cycle=2
+[READY] Time=4050000 | Type= READ | Addr=0x00000000 | Wait cycles=2
+[COVERAGE] Transfer=65 Type= READ Addr=0x00000000 Error=0 Wait=2
+[MONITOR] TRANSFER #65 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000000 data=a5000000
+READ PASS: Address=0x0, Expected=0xa5000000, Actual=0xa5000000
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000004
+[WAIT] Time=4080000 | Type= READ | Addr=0x00000004 | Stalled cycle=1
+[WAIT] Time=4090000 | Type= READ | Addr=0x00000004 | Stalled cycle=2
+[READY] Time=4100000 | Type= READ | Addr=0x00000004 | Wait cycles=2
+[COVERAGE] Transfer=66 Type= READ Addr=0x00000004 Error=0 Wait=2
+[MONITOR] TRANSFER #66 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000004 data=a5000001
+READ PASS: Address=0x4, Expected=0xa5000001, Actual=0xa5000001
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000008
+[WAIT] Time=4130000 | Type= READ | Addr=0x00000008 | Stalled cycle=1
+[READY] Time=4140000 | Type= READ | Addr=0x00000008 | Wait cycles=1
+[COVERAGE] Transfer=67 Type= READ Addr=0x00000008 Error=0 Wait=1
+[MONITOR] TRANSFER #67 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000008 data=a5000002
+READ PASS: Address=0x8, Expected=0xa5000002, Actual=0xa5000002
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000000c
+[WAIT] Time=4170000 | Type= READ | Addr=0x0000000c | Stalled cycle=1
+[WAIT] Time=4180000 | Type= READ | Addr=0x0000000c | Stalled cycle=2
+[WAIT] Time=4190000 | Type= READ | Addr=0x0000000c | Stalled cycle=3
+[WAIT] Time=4200000 | Type= READ | Addr=0x0000000c | Stalled cycle=4
+[READY] Time=4210000 | Type= READ | Addr=0x0000000c | Wait cycles=4
+[COVERAGE] Transfer=68 Type= READ Addr=0x0000000c Error=0 Wait=4
+[MONITOR] TRANSFER #68 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000000c data=a5000003
+READ PASS: Address=0xc, Expected=0xa5000003, Actual=0xa5000003
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000010
+[WAIT] Time=4240000 | Type= READ | Addr=0x00000010 | Stalled cycle=1
+[WAIT] Time=4250000 | Type= READ | Addr=0x00000010 | Stalled cycle=2
+[WAIT] Time=4260000 | Type= READ | Addr=0x00000010 | Stalled cycle=3
+[WAIT] Time=4270000 | Type= READ | Addr=0x00000010 | Stalled cycle=4
+[READY] Time=4280000 | Type= READ | Addr=0x00000010 | Wait cycles=4
+[COVERAGE] Transfer=69 Type= READ Addr=0x00000010 Error=0 Wait=4
+[MONITOR] TRANSFER #69 captured | PSLVERR=0
+Error: SCOREBOARD: READ mismatch addr=00000010 expected=a5000004 actual=00000000
+Time: 4280 ns  Iteration: 0  Process: /$unit_apb_interface_sv_2514249464/apb_scoreboard(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORDS=64)::run  Scope: $unit_apb_interface_sv_2514249464.apb_scoreboard(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORDS=64)::run  File: /home/fariha/Documents/apb_verification_project/apb_scoreboard.sv Line: 86
+Error: READ FAIL: Address=0x10, Expected=0xa5000004, Actual=0x0
+Time: 4290 ns  Iteration: 0  Process: /$unit_apb_interface_sv_2514249464/apb_back_to_back_test(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORDS=64)::run_test/Block77_5  Scope: $unit_apb_interface_sv_2514249464.apb_back_to_back_test(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORDS=64)::run_test.Block77_5  File: /home/fariha/Documents/apb_verification_project/apb_back_to_back_test.sv Line: 107
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000014
+[WAIT] Time=4310000 | Type= READ | Addr=0x00000014 | Stalled cycle=1
+[WAIT] Time=4320000 | Type= READ | Addr=0x00000014 | Stalled cycle=2
+[WAIT] Time=4330000 | Type= READ | Addr=0x00000014 | Stalled cycle=3
+[WAIT] Time=4340000 | Type= READ | Addr=0x00000014 | Stalled cycle=4
+[READY] Time=4350000 | Type= READ | Addr=0x00000014 | Wait cycles=4
+[COVERAGE] Transfer=70 Type= READ Addr=0x00000014 Error=0 Wait=4
+[MONITOR] TRANSFER #70 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000014 data=a5000005
+READ PASS: Address=0x14, Expected=0xa5000005, Actual=0xa5000005
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000018
+[WAIT] Time=4380000 | Type= READ | Addr=0x00000018 | Stalled cycle=1
+[WAIT] Time=4390000 | Type= READ | Addr=0x00000018 | Stalled cycle=2
+[WAIT] Time=4400000 | Type= READ | Addr=0x00000018 | Stalled cycle=3
+[READY] Time=4410000 | Type= READ | Addr=0x00000018 | Wait cycles=3
+[COVERAGE] Transfer=71 Type= READ Addr=0x00000018 Error=0 Wait=3
+[MONITOR] TRANSFER #71 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000018 data=a5000006
+READ PASS: Address=0x18, Expected=0xa5000006, Actual=0xa5000006
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000001c
+[WAIT] Time=4440000 | Type= READ | Addr=0x0000001c | Stalled cycle=1
+[WAIT] Time=4450000 | Type= READ | Addr=0x0000001c | Stalled cycle=2
+[WAIT] Time=4460000 | Type= READ | Addr=0x0000001c | Stalled cycle=3
+[WAIT] Time=4470000 | Type= READ | Addr=0x0000001c | Stalled cycle=4
+[READY] Time=4480000 | Type= READ | Addr=0x0000001c | Wait cycles=4
+[COVERAGE] Transfer=72 Type= READ Addr=0x0000001c Error=0 Wait=4
+[MONITOR] TRANSFER #72 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000001c data=a5000007
+READ PASS: Address=0x1c, Expected=0xa5000007, Actual=0xa5000007
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000020
+[WAIT] Time=4510000 | Type= READ | Addr=0x00000020 | Stalled cycle=1
+[WAIT] Time=4520000 | Type= READ | Addr=0x00000020 | Stalled cycle=2
+[READY] Time=4530000 | Type= READ | Addr=0x00000020 | Wait cycles=2
+[COVERAGE] Transfer=73 Type= READ Addr=0x00000020 Error=0 Wait=2
+[MONITOR] TRANSFER #73 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000020 data=a5000008
+READ PASS: Address=0x20, Expected=0xa5000008, Actual=0xa5000008
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000024
+[WAIT] Time=4560000 | Type= READ | Addr=0x00000024 | Stalled cycle=1
+[WAIT] Time=4570000 | Type= READ | Addr=0x00000024 | Stalled cycle=2
+[WAIT] Time=4580000 | Type= READ | Addr=0x00000024 | Stalled cycle=3
+[WAIT] Time=4590000 | Type= READ | Addr=0x00000024 | Stalled cycle=4
+[WAIT] Time=4600000 | Type= READ | Addr=0x00000024 | Stalled cycle=5
+[READY] Time=4610000 | Type= READ | Addr=0x00000024 | Wait cycles=5
+[COVERAGE] Transfer=74 Type= READ Addr=0x00000024 Error=0 Wait=5
+[MONITOR] TRANSFER #74 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000024 data=a5000009
+READ PASS: Address=0x24, Expected=0xa5000009, Actual=0xa5000009
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000028
+[WAIT] Time=4640000 | Type= READ | Addr=0x00000028 | Stalled cycle=1
+[WAIT] Time=4650000 | Type= READ | Addr=0x00000028 | Stalled cycle=2
+[WAIT] Time=4660000 | Type= READ | Addr=0x00000028 | Stalled cycle=3
+[WAIT] Time=4670000 | Type= READ | Addr=0x00000028 | Stalled cycle=4
+[READY] Time=4680000 | Type= READ | Addr=0x00000028 | Wait cycles=4
+[COVERAGE] Transfer=75 Type= READ Addr=0x00000028 Error=0 Wait=4
+[MONITOR] TRANSFER #75 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000028 data=a500000a
+READ PASS: Address=0x28, Expected=0xa500000a, Actual=0xa500000a
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000002c
+[WAIT] Time=4710000 | Type= READ | Addr=0x0000002c | Stalled cycle=1
+[WAIT] Time=4720000 | Type= READ | Addr=0x0000002c | Stalled cycle=2
+[READY] Time=4730000 | Type= READ | Addr=0x0000002c | Wait cycles=2
+[COVERAGE] Transfer=76 Type= READ Addr=0x0000002c Error=0 Wait=2
+[MONITOR] TRANSFER #76 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000002c data=a500000b
+READ PASS: Address=0x2c, Expected=0xa500000b, Actual=0xa500000b
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000030
+[WAIT] Time=4760000 | Type= READ | Addr=0x00000030 | Stalled cycle=1
+[WAIT] Time=4770000 | Type= READ | Addr=0x00000030 | Stalled cycle=2
+[WAIT] Time=4780000 | Type= READ | Addr=0x00000030 | Stalled cycle=3
+[WAIT] Time=4790000 | Type= READ | Addr=0x00000030 | Stalled cycle=4
+[WAIT] Time=4800000 | Type= READ | Addr=0x00000030 | Stalled cycle=5
+[READY] Time=4810000 | Type= READ | Addr=0x00000030 | Wait cycles=5
+[COVERAGE] Transfer=77 Type= READ Addr=0x00000030 Error=0 Wait=5
+[MONITOR] TRANSFER #77 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000030 data=a500000c
+READ PASS: Address=0x30, Expected=0xa500000c, Actual=0xa500000c
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000034
+[WAIT] Time=4840000 | Type= READ | Addr=0x00000034 | Stalled cycle=1
+[READY] Time=4850000 | Type= READ | Addr=0x00000034 | Wait cycles=1
+[COVERAGE] Transfer=78 Type= READ Addr=0x00000034 Error=0 Wait=1
+[MONITOR] TRANSFER #78 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000034 data=a500000d
+READ PASS: Address=0x34, Expected=0xa500000d, Actual=0xa500000d
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000038
+[WAIT] Time=4880000 | Type= READ | Addr=0x00000038 | Stalled cycle=1
+[WAIT] Time=4890000 | Type= READ | Addr=0x00000038 | Stalled cycle=2
+[WAIT] Time=4900000 | Type= READ | Addr=0x00000038 | Stalled cycle=3
+[READY] Time=4910000 | Type= READ | Addr=0x00000038 | Wait cycles=3
+[COVERAGE] Transfer=79 Type= READ Addr=0x00000038 Error=0 Wait=3
+[MONITOR] TRANSFER #79 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000038 data=a500000e
+READ PASS: Address=0x38, Expected=0xa500000e, Actual=0xa500000e
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000003c
+[WAIT] Time=4940000 | Type= READ | Addr=0x0000003c | Stalled cycle=1
+[READY] Time=4950000 | Type= READ | Addr=0x0000003c | Wait cycles=1
+[COVERAGE] Transfer=80 Type= READ Addr=0x0000003c Error=0 Wait=1
+[MONITOR] TRANSFER #80 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000003c data=a500000f
+READ PASS: Address=0x3c, Expected=0xa500000f, Actual=0xa500000f
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000040
+[WAIT] Time=4980000 | Type= READ | Addr=0x00000040 | Stalled cycle=1
+[WAIT] Time=4990000 | Type= READ | Addr=0x00000040 | Stalled cycle=2
+[READY] Time=5000000 | Type= READ | Addr=0x00000040 | Wait cycles=2
+[COVERAGE] Transfer=81 Type= READ Addr=0x00000040 Error=0 Wait=2
+[MONITOR] TRANSFER #81 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000040 data=a5000010
+READ PASS: Address=0x40, Expected=0xa5000010, Actual=0xa5000010
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000044
+[WAIT] Time=5030000 | Type= READ | Addr=0x00000044 | Stalled cycle=1
+[READY] Time=5040000 | Type= READ | Addr=0x00000044 | Wait cycles=1
+[COVERAGE] Transfer=82 Type= READ Addr=0x00000044 Error=0 Wait=1
+[MONITOR] TRANSFER #82 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000044 data=a5000011
+READ PASS: Address=0x44, Expected=0xa5000011, Actual=0xa5000011
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000048
+[WAIT] Time=5070000 | Type= READ | Addr=0x00000048 | Stalled cycle=1
+[WAIT] Time=5080000 | Type= READ | Addr=0x00000048 | Stalled cycle=2
+[READY] Time=5090000 | Type= READ | Addr=0x00000048 | Wait cycles=2
+[COVERAGE] Transfer=83 Type= READ Addr=0x00000048 Error=0 Wait=2
+[MONITOR] TRANSFER #83 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000048 data=a5000012
+READ PASS: Address=0x48, Expected=0xa5000012, Actual=0xa5000012
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000004c
+[WAIT] Time=5120000 | Type= READ | Addr=0x0000004c | Stalled cycle=1
+[READY] Time=5130000 | Type= READ | Addr=0x0000004c | Wait cycles=1
+[COVERAGE] Transfer=84 Type= READ Addr=0x0000004c Error=0 Wait=1
+[MONITOR] TRANSFER #84 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000004c data=a5000013
+READ PASS: Address=0x4c, Expected=0xa5000013, Actual=0xa5000013
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000050
+[WAIT] Time=5160000 | Type= READ | Addr=0x00000050 | Stalled cycle=1
+[WAIT] Time=5170000 | Type= READ | Addr=0x00000050 | Stalled cycle=2
+[WAIT] Time=5180000 | Type= READ | Addr=0x00000050 | Stalled cycle=3
+[WAIT] Time=5190000 | Type= READ | Addr=0x00000050 | Stalled cycle=4
+[WAIT] Time=5200000 | Type= READ | Addr=0x00000050 | Stalled cycle=5
+[READY] Time=5210000 | Type= READ | Addr=0x00000050 | Wait cycles=5
+[COVERAGE] Transfer=85 Type= READ Addr=0x00000050 Error=0 Wait=5
+[MONITOR] TRANSFER #85 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000050 data=a5000014
+READ PASS: Address=0x50, Expected=0xa5000014, Actual=0xa5000014
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000054
+[WAIT] Time=5240000 | Type= READ | Addr=0x00000054 | Stalled cycle=1
+[READY] Time=5250000 | Type= READ | Addr=0x00000054 | Wait cycles=1
+[COVERAGE] Transfer=86 Type= READ Addr=0x00000054 Error=0 Wait=1
+[MONITOR] TRANSFER #86 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000054 data=a5000015
+READ PASS: Address=0x54, Expected=0xa5000015, Actual=0xa5000015
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000058
+[WAIT] Time=5280000 | Type= READ | Addr=0x00000058 | Stalled cycle=1
+[READY] Time=5290000 | Type= READ | Addr=0x00000058 | Wait cycles=1
+[COVERAGE] Transfer=87 Type= READ Addr=0x00000058 Error=0 Wait=1
+[MONITOR] TRANSFER #87 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000058 data=a5000016
+READ PASS: Address=0x58, Expected=0xa5000016, Actual=0xa5000016
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000005c
+[WAIT] Time=5320000 | Type= READ | Addr=0x0000005c | Stalled cycle=1
+[READY] Time=5330000 | Type= READ | Addr=0x0000005c | Wait cycles=1
+[COVERAGE] Transfer=88 Type= READ Addr=0x0000005c Error=0 Wait=1
+[MONITOR] TRANSFER #88 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000005c data=a5000017
+READ PASS: Address=0x5c, Expected=0xa5000017, Actual=0xa5000017
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000060
+[WAIT] Time=5360000 | Type= READ | Addr=0x00000060 | Stalled cycle=1
+[WAIT] Time=5370000 | Type= READ | Addr=0x00000060 | Stalled cycle=2
+[WAIT] Time=5380000 | Type= READ | Addr=0x00000060 | Stalled cycle=3
+[WAIT] Time=5390000 | Type= READ | Addr=0x00000060 | Stalled cycle=4
+[WAIT] Time=5400000 | Type= READ | Addr=0x00000060 | Stalled cycle=5
+[READY] Time=5410000 | Type= READ | Addr=0x00000060 | Wait cycles=5
+[COVERAGE] Transfer=89 Type= READ Addr=0x00000060 Error=0 Wait=5
+[MONITOR] TRANSFER #89 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000060 data=a5000018
+READ PASS: Address=0x60, Expected=0xa5000018, Actual=0xa5000018
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000064
+[WAIT] Time=5440000 | Type= READ | Addr=0x00000064 | Stalled cycle=1
+[WAIT] Time=5450000 | Type= READ | Addr=0x00000064 | Stalled cycle=2
+[READY] Time=5460000 | Type= READ | Addr=0x00000064 | Wait cycles=2
+[COVERAGE] Transfer=90 Type= READ Addr=0x00000064 Error=0 Wait=2
+[MONITOR] TRANSFER #90 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000064 data=a5000019
+READ PASS: Address=0x64, Expected=0xa5000019, Actual=0xa5000019
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000068
+[WAIT] Time=5490000 | Type= READ | Addr=0x00000068 | Stalled cycle=1
+[READY] Time=5500000 | Type= READ | Addr=0x00000068 | Wait cycles=1
+[COVERAGE] Transfer=91 Type= READ Addr=0x00000068 Error=0 Wait=1
+[MONITOR] TRANSFER #91 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000068 data=a500001a
+READ PASS: Address=0x68, Expected=0xa500001a, Actual=0xa500001a
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000006c
+[WAIT] Time=5530000 | Type= READ | Addr=0x0000006c | Stalled cycle=1
+[READY] Time=5540000 | Type= READ | Addr=0x0000006c | Wait cycles=1
+[COVERAGE] Transfer=92 Type= READ Addr=0x0000006c Error=0 Wait=1
+[MONITOR] TRANSFER #92 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000006c data=a500001b
+READ PASS: Address=0x6c, Expected=0xa500001b, Actual=0xa500001b
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000070
+[WAIT] Time=5570000 | Type= READ | Addr=0x00000070 | Stalled cycle=1
+[WAIT] Time=5580000 | Type= READ | Addr=0x00000070 | Stalled cycle=2
+[WAIT] Time=5590000 | Type= READ | Addr=0x00000070 | Stalled cycle=3
+[WAIT] Time=5600000 | Type= READ | Addr=0x00000070 | Stalled cycle=4
+[READY] Time=5610000 | Type= READ | Addr=0x00000070 | Wait cycles=4
+[COVERAGE] Transfer=93 Type= READ Addr=0x00000070 Error=0 Wait=4
+[MONITOR] TRANSFER #93 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000070 data=a500001c
+READ PASS: Address=0x70, Expected=0xa500001c, Actual=0xa500001c
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000074
+[WAIT] Time=5640000 | Type= READ | Addr=0x00000074 | Stalled cycle=1
+[READY] Time=5650000 | Type= READ | Addr=0x00000074 | Wait cycles=1
+[COVERAGE] Transfer=94 Type= READ Addr=0x00000074 Error=0 Wait=1
+[MONITOR] TRANSFER #94 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000074 data=a500001d
+READ PASS: Address=0x74, Expected=0xa500001d, Actual=0xa500001d
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000078
+[WAIT] Time=5680000 | Type= READ | Addr=0x00000078 | Stalled cycle=1
+[READY] Time=5690000 | Type= READ | Addr=0x00000078 | Wait cycles=1
+[COVERAGE] Transfer=95 Type= READ Addr=0x00000078 Error=0 Wait=1
+[MONITOR] TRANSFER #95 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000078 data=a500001e
+READ PASS: Address=0x78, Expected=0xa500001e, Actual=0xa500001e
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000007c
+[WAIT] Time=5720000 | Type= READ | Addr=0x0000007c | Stalled cycle=1
+[WAIT] Time=5730000 | Type= READ | Addr=0x0000007c | Stalled cycle=2
+[WAIT] Time=5740000 | Type= READ | Addr=0x0000007c | Stalled cycle=3
+[READY] Time=5750000 | Type= READ | Addr=0x0000007c | Wait cycles=3
+[COVERAGE] Transfer=96 Type= READ Addr=0x0000007c Error=0 Wait=3
+[MONITOR] TRANSFER #96 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000007c data=a500001f
+READ PASS: Address=0x7c, Expected=0xa500001f, Actual=0xa500001f
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000080
+[WAIT] Time=5780000 | Type= READ | Addr=0x00000080 | Stalled cycle=1
+[WAIT] Time=5790000 | Type= READ | Addr=0x00000080 | Stalled cycle=2
+[WAIT] Time=5800000 | Type= READ | Addr=0x00000080 | Stalled cycle=3
+[WAIT] Time=5810000 | Type= READ | Addr=0x00000080 | Stalled cycle=4
+[READY] Time=5820000 | Type= READ | Addr=0x00000080 | Wait cycles=4
+[COVERAGE] Transfer=97 Type= READ Addr=0x00000080 Error=0 Wait=4
+[MONITOR] TRANSFER #97 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000080 data=a5000020
+READ PASS: Address=0x80, Expected=0xa5000020, Actual=0xa5000020
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000084
+[WAIT] Time=5850000 | Type= READ | Addr=0x00000084 | Stalled cycle=1
+[WAIT] Time=5860000 | Type= READ | Addr=0x00000084 | Stalled cycle=2
+[WAIT] Time=5870000 | Type= READ | Addr=0x00000084 | Stalled cycle=3
+[READY] Time=5880000 | Type= READ | Addr=0x00000084 | Wait cycles=3
+[COVERAGE] Transfer=98 Type= READ Addr=0x00000084 Error=0 Wait=3
+[MONITOR] TRANSFER #98 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000084 data=a5000021
+READ PASS: Address=0x84, Expected=0xa5000021, Actual=0xa5000021
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000088
+[WAIT] Time=5910000 | Type= READ | Addr=0x00000088 | Stalled cycle=1
+[WAIT] Time=5920000 | Type= READ | Addr=0x00000088 | Stalled cycle=2
+[WAIT] Time=5930000 | Type= READ | Addr=0x00000088 | Stalled cycle=3
+[READY] Time=5940000 | Type= READ | Addr=0x00000088 | Wait cycles=3
+[COVERAGE] Transfer=99 Type= READ Addr=0x00000088 Error=0 Wait=3
+[MONITOR] TRANSFER #99 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000088 data=a5000022
+READ PASS: Address=0x88, Expected=0xa5000022, Actual=0xa5000022
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000008c
+[WAIT] Time=5970000 | Type= READ | Addr=0x0000008c | Stalled cycle=1
+[WAIT] Time=5980000 | Type= READ | Addr=0x0000008c | Stalled cycle=2
+[READY] Time=5990000 | Type= READ | Addr=0x0000008c | Wait cycles=2
+[COVERAGE] Transfer=100 Type= READ Addr=0x0000008c Error=0 Wait=2
+[MONITOR] TRANSFER #100 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000008c data=a5000023
+READ PASS: Address=0x8c, Expected=0xa5000023, Actual=0xa5000023
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000090
+[WAIT] Time=6020000 | Type= READ | Addr=0x00000090 | Stalled cycle=1
+[WAIT] Time=6030000 | Type= READ | Addr=0x00000090 | Stalled cycle=2
+[WAIT] Time=6040000 | Type= READ | Addr=0x00000090 | Stalled cycle=3
+[WAIT] Time=6050000 | Type= READ | Addr=0x00000090 | Stalled cycle=4
+[WAIT] Time=6060000 | Type= READ | Addr=0x00000090 | Stalled cycle=5
+[READY] Time=6070000 | Type= READ | Addr=0x00000090 | Wait cycles=5
+[COVERAGE] Transfer=101 Type= READ Addr=0x00000090 Error=0 Wait=5
+[MONITOR] TRANSFER #101 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000090 data=a5000024
+READ PASS: Address=0x90, Expected=0xa5000024, Actual=0xa5000024
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000094
+[WAIT] Time=6100000 | Type= READ | Addr=0x00000094 | Stalled cycle=1
+[WAIT] Time=6110000 | Type= READ | Addr=0x00000094 | Stalled cycle=2
+[WAIT] Time=6120000 | Type= READ | Addr=0x00000094 | Stalled cycle=3
+[WAIT] Time=6130000 | Type= READ | Addr=0x00000094 | Stalled cycle=4
+[WAIT] Time=6140000 | Type= READ | Addr=0x00000094 | Stalled cycle=5
+[READY] Time=6150000 | Type= READ | Addr=0x00000094 | Wait cycles=5
+[COVERAGE] Transfer=102 Type= READ Addr=0x00000094 Error=0 Wait=5
+[MONITOR] TRANSFER #102 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000094 data=a5000025
+READ PASS: Address=0x94, Expected=0xa5000025, Actual=0xa5000025
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000098
+[WAIT] Time=6180000 | Type= READ | Addr=0x00000098 | Stalled cycle=1
+[READY] Time=6190000 | Type= READ | Addr=0x00000098 | Wait cycles=1
+[COVERAGE] Transfer=103 Type= READ Addr=0x00000098 Error=0 Wait=1
+[MONITOR] TRANSFER #103 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000098 data=a5000026
+READ PASS: Address=0x98, Expected=0xa5000026, Actual=0xa5000026
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000009c
+[WAIT] Time=6220000 | Type= READ | Addr=0x0000009c | Stalled cycle=1
+[WAIT] Time=6230000 | Type= READ | Addr=0x0000009c | Stalled cycle=2
+[WAIT] Time=6240000 | Type= READ | Addr=0x0000009c | Stalled cycle=3
+[READY] Time=6250000 | Type= READ | Addr=0x0000009c | Wait cycles=3
+[COVERAGE] Transfer=104 Type= READ Addr=0x0000009c Error=0 Wait=3
+[MONITOR] TRANSFER #104 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000009c data=a5000027
+READ PASS: Address=0x9c, Expected=0xa5000027, Actual=0xa5000027
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000a0
+[WAIT] Time=6280000 | Type= READ | Addr=0x000000a0 | Stalled cycle=1
+[WAIT] Time=6290000 | Type= READ | Addr=0x000000a0 | Stalled cycle=2
+[WAIT] Time=6300000 | Type= READ | Addr=0x000000a0 | Stalled cycle=3
+[WAIT] Time=6310000 | Type= READ | Addr=0x000000a0 | Stalled cycle=4
+[WAIT] Time=6320000 | Type= READ | Addr=0x000000a0 | Stalled cycle=5
+[READY] Time=6330000 | Type= READ | Addr=0x000000a0 | Wait cycles=5
+[COVERAGE] Transfer=105 Type= READ Addr=0x000000a0 Error=0 Wait=5
+[MONITOR] TRANSFER #105 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000a0 data=a5000028
+READ PASS: Address=0xa0, Expected=0xa5000028, Actual=0xa5000028
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000a4
+[WAIT] Time=6360000 | Type= READ | Addr=0x000000a4 | Stalled cycle=1
+[READY] Time=6370000 | Type= READ | Addr=0x000000a4 | Wait cycles=1
+[COVERAGE] Transfer=106 Type= READ Addr=0x000000a4 Error=0 Wait=1
+[MONITOR] TRANSFER #106 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000a4 data=a5000029
+READ PASS: Address=0xa4, Expected=0xa5000029, Actual=0xa5000029
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000a8
+[WAIT] Time=6400000 | Type= READ | Addr=0x000000a8 | Stalled cycle=1
+[WAIT] Time=6410000 | Type= READ | Addr=0x000000a8 | Stalled cycle=2
+[WAIT] Time=6420000 | Type= READ | Addr=0x000000a8 | Stalled cycle=3
+[WAIT] Time=6430000 | Type= READ | Addr=0x000000a8 | Stalled cycle=4
+[READY] Time=6440000 | Type= READ | Addr=0x000000a8 | Wait cycles=4
+[COVERAGE] Transfer=107 Type= READ Addr=0x000000a8 Error=0 Wait=4
+[MONITOR] TRANSFER #107 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000a8 data=a500002a
+READ PASS: Address=0xa8, Expected=0xa500002a, Actual=0xa500002a
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000ac
+[WAIT] Time=6470000 | Type= READ | Addr=0x000000ac | Stalled cycle=1
+[WAIT] Time=6480000 | Type= READ | Addr=0x000000ac | Stalled cycle=2
+[WAIT] Time=6490000 | Type= READ | Addr=0x000000ac | Stalled cycle=3
+[READY] Time=6500000 | Type= READ | Addr=0x000000ac | Wait cycles=3
+[COVERAGE] Transfer=108 Type= READ Addr=0x000000ac Error=0 Wait=3
+[MONITOR] TRANSFER #108 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000ac data=a500002b
+READ PASS: Address=0xac, Expected=0xa500002b, Actual=0xa500002b
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000b0
+[WAIT] Time=6530000 | Type= READ | Addr=0x000000b0 | Stalled cycle=1
+[WAIT] Time=6540000 | Type= READ | Addr=0x000000b0 | Stalled cycle=2
+[WAIT] Time=6550000 | Type= READ | Addr=0x000000b0 | Stalled cycle=3
+[WAIT] Time=6560000 | Type= READ | Addr=0x000000b0 | Stalled cycle=4
+[READY] Time=6570000 | Type= READ | Addr=0x000000b0 | Wait cycles=4
+[COVERAGE] Transfer=109 Type= READ Addr=0x000000b0 Error=0 Wait=4
+[MONITOR] TRANSFER #109 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000b0 data=a500002c
+READ PASS: Address=0xb0, Expected=0xa500002c, Actual=0xa500002c
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000b4
+[WAIT] Time=6600000 | Type= READ | Addr=0x000000b4 | Stalled cycle=1
+[WAIT] Time=6610000 | Type= READ | Addr=0x000000b4 | Stalled cycle=2
+[READY] Time=6620000 | Type= READ | Addr=0x000000b4 | Wait cycles=2
+[COVERAGE] Transfer=110 Type= READ Addr=0x000000b4 Error=0 Wait=2
+[MONITOR] TRANSFER #110 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000b4 data=a500002d
+READ PASS: Address=0xb4, Expected=0xa500002d, Actual=0xa500002d
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000b8
+[WAIT] Time=6650000 | Type= READ | Addr=0x000000b8 | Stalled cycle=1
+[WAIT] Time=6660000 | Type= READ | Addr=0x000000b8 | Stalled cycle=2
+[WAIT] Time=6670000 | Type= READ | Addr=0x000000b8 | Stalled cycle=3
+[READY] Time=6680000 | Type= READ | Addr=0x000000b8 | Wait cycles=3
+[COVERAGE] Transfer=111 Type= READ Addr=0x000000b8 Error=0 Wait=3
+[MONITOR] TRANSFER #111 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000b8 data=a500002e
+READ PASS: Address=0xb8, Expected=0xa500002e, Actual=0xa500002e
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000bc
+[WAIT] Time=6710000 | Type= READ | Addr=0x000000bc | Stalled cycle=1
+[WAIT] Time=6720000 | Type= READ | Addr=0x000000bc | Stalled cycle=2
+[READY] Time=6730000 | Type= READ | Addr=0x000000bc | Wait cycles=2
+[COVERAGE] Transfer=112 Type= READ Addr=0x000000bc Error=0 Wait=2
+[MONITOR] TRANSFER #112 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000bc data=a500002f
+READ PASS: Address=0xbc, Expected=0xa500002f, Actual=0xa500002f
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000c0
+[WAIT] Time=6760000 | Type= READ | Addr=0x000000c0 | Stalled cycle=1
+[READY] Time=6770000 | Type= READ | Addr=0x000000c0 | Wait cycles=1
+[COVERAGE] Transfer=113 Type= READ Addr=0x000000c0 Error=0 Wait=1
+[MONITOR] TRANSFER #113 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000c0 data=a5000030
+READ PASS: Address=0xc0, Expected=0xa5000030, Actual=0xa5000030
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000c4
+[WAIT] Time=6800000 | Type= READ | Addr=0x000000c4 | Stalled cycle=1
+[WAIT] Time=6810000 | Type= READ | Addr=0x000000c4 | Stalled cycle=2
+[WAIT] Time=6820000 | Type= READ | Addr=0x000000c4 | Stalled cycle=3
+[WAIT] Time=6830000 | Type= READ | Addr=0x000000c4 | Stalled cycle=4
+[WAIT] Time=6840000 | Type= READ | Addr=0x000000c4 | Stalled cycle=5
+[READY] Time=6850000 | Type= READ | Addr=0x000000c4 | Wait cycles=5
+[COVERAGE] Transfer=114 Type= READ Addr=0x000000c4 Error=0 Wait=5
+[MONITOR] TRANSFER #114 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000c4 data=a5000031
+READ PASS: Address=0xc4, Expected=0xa5000031, Actual=0xa5000031
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000c8
+[WAIT] Time=6880000 | Type= READ | Addr=0x000000c8 | Stalled cycle=1
+[WAIT] Time=6890000 | Type= READ | Addr=0x000000c8 | Stalled cycle=2
+[WAIT] Time=6900000 | Type= READ | Addr=0x000000c8 | Stalled cycle=3
+[WAIT] Time=6910000 | Type= READ | Addr=0x000000c8 | Stalled cycle=4
+[READY] Time=6920000 | Type= READ | Addr=0x000000c8 | Wait cycles=4
+[COVERAGE] Transfer=115 Type= READ Addr=0x000000c8 Error=0 Wait=4
+[MONITOR] TRANSFER #115 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000c8 data=a5000032
+READ PASS: Address=0xc8, Expected=0xa5000032, Actual=0xa5000032
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000cc
+[WAIT] Time=6950000 | Type= READ | Addr=0x000000cc | Stalled cycle=1
+[WAIT] Time=6960000 | Type= READ | Addr=0x000000cc | Stalled cycle=2
+[WAIT] Time=6970000 | Type= READ | Addr=0x000000cc | Stalled cycle=3
+[READY] Time=6980000 | Type= READ | Addr=0x000000cc | Wait cycles=3
+[COVERAGE] Transfer=116 Type= READ Addr=0x000000cc Error=0 Wait=3
+[MONITOR] TRANSFER #116 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000cc data=a5000033
+READ PASS: Address=0xcc, Expected=0xa5000033, Actual=0xa5000033
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000d0
+[WAIT] Time=7010000 | Type= READ | Addr=0x000000d0 | Stalled cycle=1
+[WAIT] Time=7020000 | Type= READ | Addr=0x000000d0 | Stalled cycle=2
+[WAIT] Time=7030000 | Type= READ | Addr=0x000000d0 | Stalled cycle=3
+[WAIT] Time=7040000 | Type= READ | Addr=0x000000d0 | Stalled cycle=4
+[WAIT] Time=7050000 | Type= READ | Addr=0x000000d0 | Stalled cycle=5
+[READY] Time=7060000 | Type= READ | Addr=0x000000d0 | Wait cycles=5
+[COVERAGE] Transfer=117 Type= READ Addr=0x000000d0 Error=0 Wait=5
+[MONITOR] TRANSFER #117 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000d0 data=a5000034
+READ PASS: Address=0xd0, Expected=0xa5000034, Actual=0xa5000034
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000d4
+[WAIT] Time=7090000 | Type= READ | Addr=0x000000d4 | Stalled cycle=1
+[WAIT] Time=7100000 | Type= READ | Addr=0x000000d4 | Stalled cycle=2
+[WAIT] Time=7110000 | Type= READ | Addr=0x000000d4 | Stalled cycle=3
+[READY] Time=7120000 | Type= READ | Addr=0x000000d4 | Wait cycles=3
+[COVERAGE] Transfer=118 Type= READ Addr=0x000000d4 Error=0 Wait=3
+[MONITOR] TRANSFER #118 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000d4 data=a5000035
+READ PASS: Address=0xd4, Expected=0xa5000035, Actual=0xa5000035
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000d8
+[WAIT] Time=7150000 | Type= READ | Addr=0x000000d8 | Stalled cycle=1
+[WAIT] Time=7160000 | Type= READ | Addr=0x000000d8 | Stalled cycle=2
+[WAIT] Time=7170000 | Type= READ | Addr=0x000000d8 | Stalled cycle=3
+[WAIT] Time=7180000 | Type= READ | Addr=0x000000d8 | Stalled cycle=4
+[READY] Time=7190000 | Type= READ | Addr=0x000000d8 | Wait cycles=4
+[COVERAGE] Transfer=119 Type= READ Addr=0x000000d8 Error=0 Wait=4
+[MONITOR] TRANSFER #119 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000d8 data=a5000036
+READ PASS: Address=0xd8, Expected=0xa5000036, Actual=0xa5000036
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000dc
+[WAIT] Time=7220000 | Type= READ | Addr=0x000000dc | Stalled cycle=1
+[WAIT] Time=7230000 | Type= READ | Addr=0x000000dc | Stalled cycle=2
+[WAIT] Time=7240000 | Type= READ | Addr=0x000000dc | Stalled cycle=3
+[WAIT] Time=7250000 | Type= READ | Addr=0x000000dc | Stalled cycle=4
+[READY] Time=7260000 | Type= READ | Addr=0x000000dc | Wait cycles=4
+[COVERAGE] Transfer=120 Type= READ Addr=0x000000dc Error=0 Wait=4
+[MONITOR] TRANSFER #120 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000dc data=a5000037
+READ PASS: Address=0xdc, Expected=0xa5000037, Actual=0xa5000037
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000e0
+[WAIT] Time=7290000 | Type= READ | Addr=0x000000e0 | Stalled cycle=1
+[WAIT] Time=7300000 | Type= READ | Addr=0x000000e0 | Stalled cycle=2
+[WAIT] Time=7310000 | Type= READ | Addr=0x000000e0 | Stalled cycle=3
+[WAIT] Time=7320000 | Type= READ | Addr=0x000000e0 | Stalled cycle=4
+[READY] Time=7330000 | Type= READ | Addr=0x000000e0 | Wait cycles=4
+[COVERAGE] Transfer=121 Type= READ Addr=0x000000e0 Error=0 Wait=4
+[MONITOR] TRANSFER #121 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000e0 data=a5000038
+READ PASS: Address=0xe0, Expected=0xa5000038, Actual=0xa5000038
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000e4
+[WAIT] Time=7360000 | Type= READ | Addr=0x000000e4 | Stalled cycle=1
+[WAIT] Time=7370000 | Type= READ | Addr=0x000000e4 | Stalled cycle=2
+[READY] Time=7380000 | Type= READ | Addr=0x000000e4 | Wait cycles=2
+[COVERAGE] Transfer=122 Type= READ Addr=0x000000e4 Error=0 Wait=2
+[MONITOR] TRANSFER #122 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000e4 data=a5000039
+READ PASS: Address=0xe4, Expected=0xa5000039, Actual=0xa5000039
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000e8
+[WAIT] Time=7410000 | Type= READ | Addr=0x000000e8 | Stalled cycle=1
+[READY] Time=7420000 | Type= READ | Addr=0x000000e8 | Wait cycles=1
+[COVERAGE] Transfer=123 Type= READ Addr=0x000000e8 Error=0 Wait=1
+[MONITOR] TRANSFER #123 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000e8 data=a500003a
+READ PASS: Address=0xe8, Expected=0xa500003a, Actual=0xa500003a
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000ec
+[WAIT] Time=7450000 | Type= READ | Addr=0x000000ec | Stalled cycle=1
+[WAIT] Time=7460000 | Type= READ | Addr=0x000000ec | Stalled cycle=2
+[WAIT] Time=7470000 | Type= READ | Addr=0x000000ec | Stalled cycle=3
+[READY] Time=7480000 | Type= READ | Addr=0x000000ec | Wait cycles=3
+[COVERAGE] Transfer=124 Type= READ Addr=0x000000ec Error=0 Wait=3
+[MONITOR] TRANSFER #124 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000ec data=a500003b
+READ PASS: Address=0xec, Expected=0xa500003b, Actual=0xa500003b
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000f0
+[WAIT] Time=7510000 | Type= READ | Addr=0x000000f0 | Stalled cycle=1
+[WAIT] Time=7520000 | Type= READ | Addr=0x000000f0 | Stalled cycle=2
+[WAIT] Time=7530000 | Type= READ | Addr=0x000000f0 | Stalled cycle=3
+[WAIT] Time=7540000 | Type= READ | Addr=0x000000f0 | Stalled cycle=4
+[READY] Time=7550000 | Type= READ | Addr=0x000000f0 | Wait cycles=4
+[COVERAGE] Transfer=125 Type= READ Addr=0x000000f0 Error=0 Wait=4
+[MONITOR] TRANSFER #125 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000f0 data=a500003c
+READ PASS: Address=0xf0, Expected=0xa500003c, Actual=0xa500003c
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000f4
+[WAIT] Time=7580000 | Type= READ | Addr=0x000000f4 | Stalled cycle=1
+[WAIT] Time=7590000 | Type= READ | Addr=0x000000f4 | Stalled cycle=2
+[WAIT] Time=7600000 | Type= READ | Addr=0x000000f4 | Stalled cycle=3
+[WAIT] Time=7610000 | Type= READ | Addr=0x000000f4 | Stalled cycle=4
+[READY] Time=7620000 | Type= READ | Addr=0x000000f4 | Wait cycles=4
+[COVERAGE] Transfer=126 Type= READ Addr=0x000000f4 Error=0 Wait=4
+[MONITOR] TRANSFER #126 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000f4 data=a500003d
+READ PASS: Address=0xf4, Expected=0xa500003d, Actual=0xa500003d
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000f8
+[WAIT] Time=7650000 | Type= READ | Addr=0x000000f8 | Stalled cycle=1
+[WAIT] Time=7660000 | Type= READ | Addr=0x000000f8 | Stalled cycle=2
+[WAIT] Time=7670000 | Type= READ | Addr=0x000000f8 | Stalled cycle=3
+[READY] Time=7680000 | Type= READ | Addr=0x000000f8 | Wait cycles=3
+[COVERAGE] Transfer=127 Type= READ Addr=0x000000f8 Error=0 Wait=3
+[MONITOR] TRANSFER #127 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000f8 data=a500003e
+READ PASS: Address=0xf8, Expected=0xa500003e, Actual=0xa500003e
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x000000fc
+[WAIT] Time=7710000 | Type= READ | Addr=0x000000fc | Stalled cycle=1
+[WAIT] Time=7720000 | Type= READ | Addr=0x000000fc | Stalled cycle=2
+[READY] Time=7730000 | Type= READ | Addr=0x000000fc | Wait cycles=2
+[COVERAGE] Transfer=128 Type= READ Addr=0x000000fc Error=0 Wait=2
+[MONITOR] TRANSFER #128 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=000000fc data=a500003f
+READ PASS: Address=0xfc, Expected=0xa500003f, Actual=0xa500003f
+
+==========================================
+       BACK-TO-BACK TEST SUMMARY
+==========================================
+Memory addresses tested: 64
+Transfers attempted    : 128
+Checks passed          : 127
+Checks failed          : 1
+==========================================
+
+
+========== SCOREBOARD REPORT ==========
+Completed transfers : 128
+Checking errors     : 1
+========================================
+Driver timeouts : 0
+Local failures  : 0
+Error: TEST RESULT: FAIL
+Time: 7741 ns  Iteration: 0  Process: /$unit_apb_interface_sv_2514249464/apb_base_test(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORD=64)::finish_test  Scope: $unit_apb_interface_sv_2514249464.apb_base_test(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORD=64)::finish_test  File: /home/fariha/Documents/apb_verification_project/apb_base_test.sv Line: 100
+
+====================================
+ APB TEST COMPLETED
+====================================
+
+========================================
+       APB FUNCTIONAL COVERAGE
+========================================
+Completed transfers sampled : 128
+Functional coverage         : 68.75%
+========================================
+
+$finish called at time : 7741 ns : File "/home/fariha/Documents/apb_verification_project/apb_tb_top.sv" Line 148
+## write_xsim_coverage -cov_db_name back_to_back
+INFO:  (TCL) Writing Functional Coverage Database at path : xsim.covdb/back_to_back/xsim.covinfo
+INFO-SAVE : (TCL) Code Coverage DB saved successfully at : xsim.codeCov/back_to_back/xsim.CCInfo
+## quit
+INFO: xsimkernel Simulation Memory Usage: 284020 KB (Peak: 336484 KB), Simulation CPU Usage: 1170 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 14 14:27:24 2026...

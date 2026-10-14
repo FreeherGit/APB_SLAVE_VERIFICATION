@@ -8,7 +8,7 @@ class apb_environment #(
     virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif;
 
     mailbox #(apb_transaction #(ADDR_WIDTH, DATA_WIDTH)) mon2sb;
-
+apb_coverage #(ADDR_WIDTH, DATA_WIDTH, MEM_WORD) cov;
     apb_driver #(
         ADDR_WIDTH, DATA_WIDTH
     ) drv;
@@ -22,21 +22,23 @@ class apb_environment #(
 
     bit started;
 
-    function new(
-        virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif
-    );
+function new(
+    virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif,
+    apb_coverage #(ADDR_WIDTH, DATA_WIDTH, MEM_WORD) shared_cov = null
+);
+    this.vif = vif;
+    mon2sb = new();
+    drv = new(vif);
 
-        this.vif = vif;
+    if (shared_cov == null)
+        cov = new();
+    else
+        cov = shared_cov;
 
-        mon2sb = new();
-
-        drv = new(vif);
-        mon = new(vif, mon2sb);
-        sb  = new(mon2sb);
-
-        started = 0;
-
-    endfunction
+    mon = new(vif, mon2sb, cov);
+    sb = new(mon2sb);
+    started = 0;
+endfunction
 
     task start();
 
@@ -85,11 +87,13 @@ class apb_environment #(
 
         end
 
-        if (!found)
+	if (!found)begin
             $error(
                 "ENVIRONMENT: timeout waiting for %0d completed transfers",
                 target
             );
+	    sb.error_count++;
+    end
 
     endtask
 

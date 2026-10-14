@@ -4,10 +4,12 @@ class apb_read_test #(
     parameter int DATA_WIDTH = 32
 ) extends apb_base_test #(ADDR_WIDTH, DATA_WIDTH);
 
-    function new(virtual apb_if vif);
-        super.new(vif);
-    endfunction
-
+function new(
+    virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif,
+    apb_coverage #(ADDR_WIDTH, DATA_WIDTH, 64) shared_cov = null
+);
+    super.new(vif, shared_cov);
+endfunction
     localparam int BYTES_PER_WORD = DATA_WIDTH / 8;
     localparam int NUM_ORIGINAL = 4;
     localparam int NUM_NEW = 4;

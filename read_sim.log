@@ -1,0 +1,362 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Oct 14 14:27:12 2026
+# Process ID         : 4079482
+# Current directory  : /home/fariha/Documents/apb_verification_project
+# Command line       : xsim -log read_sim.log -mode tcl -source {xsim.dir/tb_top_sim/xsim_script.tcl}
+# Log file           : /home/fariha/Documents/apb_verification_project/read_sim.log
+# Journal file       : /home/fariha/Documents/apb_verification_project/xsim.jou
+# Running On         : vlsi-vivado
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
+# CPU Frequency      : 3999.970 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 41875 MB
+# Swap memory        : 27648 MB
+# Total Virtual      : 69524 MB
+# Available Virtual  : 59174 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_top_sim/xsim_script.tcl
+# xsim {tb_top_sim} -testplusarg TEST=read -wdb {read_apb_wave.wdb} -cov_db_name read -autoloadwcfg -tclbatch {read_cov.tcl} -onfinish stop
+Time resolution is 1 ps
+source read_cov.tcl
+## run all
+
+====================================
+ APB SLAVE VERIFICATION TESTBENCH
+ ADDR_WIDTH = 32
+ DATA_WIDTH = 32
+ Selected test = read
+====================================
+
+========================================
+Starting APB test
+ADDR_WIDTH = 32
+DATA_WIDTH = 32
+========================================
+
+================================================
+ APB READ RETENTION AND NEW-WRITE TEST
+================================================
+
+PHASE 1: Initialize original addresses
+Initialize addr=0x00000000 data=0xa5001000
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000000
+[READY] Time=80000 | Type=WRITE | Addr=0x00000000 | Wait cycles=0
+[COVERAGE] Transfer=1 Type=WRITE Addr=0x00000000 Error=0 Wait=0
+[MONITOR] TRANSFER #1 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000000 data=a5001000
+INITIAL WRITE PASS: transfer completed
+Initialize addr=0x0000000c data=0xa5001001
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000000c
+[WAIT] Time=110000 | Type=WRITE | Addr=0x0000000c | Stalled cycle=1
+[READY] Time=120000 | Type=WRITE | Addr=0x0000000c | Wait cycles=1
+[COVERAGE] Transfer=2 Type=WRITE Addr=0x0000000c Error=0 Wait=1
+[MONITOR] TRANSFER #2 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000000c data=a5001001
+INITIAL WRITE PASS: transfer completed
+Initialize addr=0x0000001c data=0xa5001002
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000001c
+[WAIT] Time=150000 | Type=WRITE | Addr=0x0000001c | Stalled cycle=1
+[READY] Time=160000 | Type=WRITE | Addr=0x0000001c | Wait cycles=1
+[COVERAGE] Transfer=3 Type=WRITE Addr=0x0000001c Error=0 Wait=1
+[MONITOR] TRANSFER #3 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000001c data=a5001002
+INITIAL WRITE PASS: transfer completed
+Initialize addr=0x00000030 data=0xa5001003
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000030
+[WAIT] Time=190000 | Type=WRITE | Addr=0x00000030 | Stalled cycle=1
+[WAIT] Time=200000 | Type=WRITE | Addr=0x00000030 | Stalled cycle=2
+[READY] Time=210000 | Type=WRITE | Addr=0x00000030 | Wait cycles=2
+[COVERAGE] Transfer=4 Type=WRITE Addr=0x00000030 Error=0 Wait=2
+[MONITOR] TRANSFER #4 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000030 data=a5001003
+INITIAL WRITE PASS: transfer completed
+
+PHASE 2: Read original addresses before new writes
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000000
+[WAIT] Time=240000 | Type= READ | Addr=0x00000000 | Stalled cycle=1
+[WAIT] Time=250000 | Type= READ | Addr=0x00000000 | Stalled cycle=2
+[READY] Time=260000 | Type= READ | Addr=0x00000000 | Wait cycles=2
+[COVERAGE] Transfer=5 Type= READ Addr=0x00000000 Error=0 Wait=2
+[MONITOR] TRANSFER #5 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000000 data=a5001000
+
+Address  : 0x00000000
+Expected : 0xa5001000
+Actual   : 0xa5001000
+RESULT   : PASS - initial data verified
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000000c
+[WAIT] Time=290000 | Type= READ | Addr=0x0000000c | Stalled cycle=1
+[WAIT] Time=300000 | Type= READ | Addr=0x0000000c | Stalled cycle=2
+[WAIT] Time=310000 | Type= READ | Addr=0x0000000c | Stalled cycle=3
+[WAIT] Time=320000 | Type= READ | Addr=0x0000000c | Stalled cycle=4
+[WAIT] Time=330000 | Type= READ | Addr=0x0000000c | Stalled cycle=5
+[READY] Time=340000 | Type= READ | Addr=0x0000000c | Wait cycles=5
+[COVERAGE] Transfer=6 Type= READ Addr=0x0000000c Error=0 Wait=5
+[MONITOR] TRANSFER #6 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000000c data=a5001001
+
+Address  : 0x0000000c
+Expected : 0xa5001001
+Actual   : 0xa5001001
+RESULT   : PASS - initial data verified
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000001c
+[WAIT] Time=370000 | Type= READ | Addr=0x0000001c | Stalled cycle=1
+[WAIT] Time=380000 | Type= READ | Addr=0x0000001c | Stalled cycle=2
+[WAIT] Time=390000 | Type= READ | Addr=0x0000001c | Stalled cycle=3
+[WAIT] Time=400000 | Type= READ | Addr=0x0000001c | Stalled cycle=4
+[READY] Time=410000 | Type= READ | Addr=0x0000001c | Wait cycles=4
+[COVERAGE] Transfer=7 Type= READ Addr=0x0000001c Error=0 Wait=4
+[MONITOR] TRANSFER #7 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000001c data=a5001002
+
+Address  : 0x0000001c
+Expected : 0xa5001002
+Actual   : 0xa5001002
+RESULT   : PASS - initial data verified
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000030
+[WAIT] Time=440000 | Type= READ | Addr=0x00000030 | Stalled cycle=1
+[WAIT] Time=450000 | Type= READ | Addr=0x00000030 | Stalled cycle=2
+[READY] Time=460000 | Type= READ | Addr=0x00000030 | Wait cycles=2
+[COVERAGE] Transfer=8 Type= READ Addr=0x00000030 Error=0 Wait=2
+[MONITOR] TRANSFER #8 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000030 data=a5001003
+
+Address  : 0x00000030
+Expected : 0xa5001003
+Actual   : 0xa5001003
+RESULT   : PASS - initial data verified
+
+PHASE 3: Write to different addresses
+New write addr=0x00000004 data=0x5a002000
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000004
+[WAIT] Time=490000 | Type=WRITE | Addr=0x00000004 | Stalled cycle=1
+[WAIT] Time=500000 | Type=WRITE | Addr=0x00000004 | Stalled cycle=2
+[WAIT] Time=510000 | Type=WRITE | Addr=0x00000004 | Stalled cycle=3
+[WAIT] Time=520000 | Type=WRITE | Addr=0x00000004 | Stalled cycle=4
+[READY] Time=530000 | Type=WRITE | Addr=0x00000004 | Wait cycles=4
+[COVERAGE] Transfer=9 Type=WRITE Addr=0x00000004 Error=0 Wait=4
+[MONITOR] TRANSFER #9 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000004 data=5a002000
+NEW WRITE PASS: transfer completed
+New write addr=0x00000010 data=0x5a002001
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000010
+[WAIT] Time=560000 | Type=WRITE | Addr=0x00000010 | Stalled cycle=1
+[WAIT] Time=570000 | Type=WRITE | Addr=0x00000010 | Stalled cycle=2
+[WAIT] Time=580000 | Type=WRITE | Addr=0x00000010 | Stalled cycle=3
+[WAIT] Time=590000 | Type=WRITE | Addr=0x00000010 | Stalled cycle=4
+[READY] Time=600000 | Type=WRITE | Addr=0x00000010 | Wait cycles=4
+[COVERAGE] Transfer=10 Type=WRITE Addr=0x00000010 Error=0 Wait=4
+[MONITOR] TRANSFER #10 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000010 data=5a002001
+NEW WRITE PASS: transfer completed
+New write addr=0x00000020 data=0x5a002002
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000020
+[WAIT] Time=630000 | Type=WRITE | Addr=0x00000020 | Stalled cycle=1
+[WAIT] Time=640000 | Type=WRITE | Addr=0x00000020 | Stalled cycle=2
+[READY] Time=650000 | Type=WRITE | Addr=0x00000020 | Wait cycles=2
+[COVERAGE] Transfer=11 Type=WRITE Addr=0x00000020 Error=0 Wait=2
+[MONITOR] TRANSFER #11 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000020 data=5a002002
+NEW WRITE PASS: transfer completed
+New write addr=0x0000003c data=0x5a002003
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000003c
+[WAIT] Time=680000 | Type=WRITE | Addr=0x0000003c | Stalled cycle=1
+[WAIT] Time=690000 | Type=WRITE | Addr=0x0000003c | Stalled cycle=2
+[WAIT] Time=700000 | Type=WRITE | Addr=0x0000003c | Stalled cycle=3
+[WAIT] Time=710000 | Type=WRITE | Addr=0x0000003c | Stalled cycle=4
+[WAIT] Time=720000 | Type=WRITE | Addr=0x0000003c | Stalled cycle=5
+[READY] Time=730000 | Type=WRITE | Addr=0x0000003c | Wait cycles=5
+[COVERAGE] Transfer=12 Type=WRITE Addr=0x0000003c Error=0 Wait=5
+[MONITOR] TRANSFER #12 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000003c data=5a002003
+NEW WRITE PASS: transfer completed
+
+PHASE 4: Read all addresses and verify data
+Original addresses must retain their values.
+New addresses must contain the new values.
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000000
+[WAIT] Time=760000 | Type= READ | Addr=0x00000000 | Stalled cycle=1
+[WAIT] Time=770000 | Type= READ | Addr=0x00000000 | Stalled cycle=2
+[WAIT] Time=780000 | Type= READ | Addr=0x00000000 | Stalled cycle=3
+[WAIT] Time=790000 | Type= READ | Addr=0x00000000 | Stalled cycle=4
+[READY] Time=800000 | Type= READ | Addr=0x00000000 | Wait cycles=4
+[COVERAGE] Transfer=13 Type= READ Addr=0x00000000 Error=0 Wait=4
+[MONITOR] TRANSFER #13 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000000 data=a5001000
+
+Address type: ORIGINAL ADDRESS
+Address  : 0x00000000
+Expected : 0xa5001000
+Actual   : 0xa5001000
+RESULT   : PASS - data matches
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000000c
+[WAIT] Time=830000 | Type= READ | Addr=0x0000000c | Stalled cycle=1
+[WAIT] Time=840000 | Type= READ | Addr=0x0000000c | Stalled cycle=2
+[WAIT] Time=850000 | Type= READ | Addr=0x0000000c | Stalled cycle=3
+[WAIT] Time=860000 | Type= READ | Addr=0x0000000c | Stalled cycle=4
+[WAIT] Time=870000 | Type= READ | Addr=0x0000000c | Stalled cycle=5
+[READY] Time=880000 | Type= READ | Addr=0x0000000c | Wait cycles=5
+[COVERAGE] Transfer=14 Type= READ Addr=0x0000000c Error=0 Wait=5
+[MONITOR] TRANSFER #14 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000000c data=a5001001
+
+Address type: ORIGINAL ADDRESS
+Address  : 0x0000000c
+Expected : 0xa5001001
+Actual   : 0xa5001001
+RESULT   : PASS - data matches
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000001c
+[WAIT] Time=910000 | Type= READ | Addr=0x0000001c | Stalled cycle=1
+[WAIT] Time=920000 | Type= READ | Addr=0x0000001c | Stalled cycle=2
+[WAIT] Time=930000 | Type= READ | Addr=0x0000001c | Stalled cycle=3
+[WAIT] Time=940000 | Type= READ | Addr=0x0000001c | Stalled cycle=4
+[WAIT] Time=950000 | Type= READ | Addr=0x0000001c | Stalled cycle=5
+[READY] Time=960000 | Type= READ | Addr=0x0000001c | Wait cycles=5
+[COVERAGE] Transfer=15 Type= READ Addr=0x0000001c Error=0 Wait=5
+[MONITOR] TRANSFER #15 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000001c data=a5001002
+
+Address type: ORIGINAL ADDRESS
+Address  : 0x0000001c
+Expected : 0xa5001002
+Actual   : 0xa5001002
+RESULT   : PASS - data matches
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000030
+[WAIT] Time=990000 | Type= READ | Addr=0x00000030 | Stalled cycle=1
+[WAIT] Time=1000000 | Type= READ | Addr=0x00000030 | Stalled cycle=2
+[WAIT] Time=1010000 | Type= READ | Addr=0x00000030 | Stalled cycle=3
+[WAIT] Time=1020000 | Type= READ | Addr=0x00000030 | Stalled cycle=4
+[WAIT] Time=1030000 | Type= READ | Addr=0x00000030 | Stalled cycle=5
+[READY] Time=1040000 | Type= READ | Addr=0x00000030 | Wait cycles=5
+[COVERAGE] Transfer=16 Type= READ Addr=0x00000030 Error=0 Wait=5
+[MONITOR] TRANSFER #16 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000030 data=a5001003
+
+Address type: ORIGINAL ADDRESS
+Address  : 0x00000030
+Expected : 0xa5001003
+Actual   : 0xa5001003
+RESULT   : PASS - data matches
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000004
+[WAIT] Time=1070000 | Type= READ | Addr=0x00000004 | Stalled cycle=1
+[WAIT] Time=1080000 | Type= READ | Addr=0x00000004 | Stalled cycle=2
+[WAIT] Time=1090000 | Type= READ | Addr=0x00000004 | Stalled cycle=3
+[WAIT] Time=1100000 | Type= READ | Addr=0x00000004 | Stalled cycle=4
+[READY] Time=1110000 | Type= READ | Addr=0x00000004 | Wait cycles=4
+[COVERAGE] Transfer=17 Type= READ Addr=0x00000004 Error=0 Wait=4
+[MONITOR] TRANSFER #17 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000004 data=5a002000
+
+Address type: NEWLY WRITTEN ADDRESS
+Address  : 0x00000004
+Expected : 0x5a002000
+Actual   : 0x5a002000
+RESULT   : PASS - data matches
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000010
+[WAIT] Time=1140000 | Type= READ | Addr=0x00000010 | Stalled cycle=1
+[WAIT] Time=1150000 | Type= READ | Addr=0x00000010 | Stalled cycle=2
+[WAIT] Time=1160000 | Type= READ | Addr=0x00000010 | Stalled cycle=3
+[READY] Time=1170000 | Type= READ | Addr=0x00000010 | Wait cycles=3
+[COVERAGE] Transfer=18 Type= READ Addr=0x00000010 Error=0 Wait=3
+[MONITOR] TRANSFER #18 captured | PSLVERR=0
+Error: SCOREBOARD: READ mismatch addr=00000010 expected=5a002001 actual=00000000
+Time: 1170 ns  Iteration: 0  Process: /$unit_apb_interface_sv_2514249464/apb_scoreboard(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORDS=64)::run  Scope: $unit_apb_interface_sv_2514249464.apb_scoreboard(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORDS=64)::run  File: /home/fariha/Documents/apb_verification_project/apb_scoreboard.sv Line: 86
+
+Address type: NEWLY WRITTEN ADDRESS
+Address  : 0x00000010
+Expected : 0x5a002001
+Actual   : 0x00000000
+RESULT   : FAIL - data mismatch
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000020
+[WAIT] Time=1200000 | Type= READ | Addr=0x00000020 | Stalled cycle=1
+[WAIT] Time=1210000 | Type= READ | Addr=0x00000020 | Stalled cycle=2
+[WAIT] Time=1220000 | Type= READ | Addr=0x00000020 | Stalled cycle=3
+[READY] Time=1230000 | Type= READ | Addr=0x00000020 | Wait cycles=3
+[COVERAGE] Transfer=19 Type= READ Addr=0x00000020 Error=0 Wait=3
+[MONITOR] TRANSFER #19 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000020 data=5a002002
+
+Address type: NEWLY WRITTEN ADDRESS
+Address  : 0x00000020
+Expected : 0x5a002002
+Actual   : 0x5a002002
+RESULT   : PASS - data matches
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000003c
+[WAIT] Time=1260000 | Type= READ | Addr=0x0000003c | Stalled cycle=1
+[WAIT] Time=1270000 | Type= READ | Addr=0x0000003c | Stalled cycle=2
+[WAIT] Time=1280000 | Type= READ | Addr=0x0000003c | Stalled cycle=3
+[WAIT] Time=1290000 | Type= READ | Addr=0x0000003c | Stalled cycle=4
+[WAIT] Time=1300000 | Type= READ | Addr=0x0000003c | Stalled cycle=5
+[READY] Time=1310000 | Type= READ | Addr=0x0000003c | Wait cycles=5
+[COVERAGE] Transfer=20 Type= READ Addr=0x0000003c Error=0 Wait=5
+[MONITOR] TRANSFER #20 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000003c data=5a002003
+
+Address type: NEWLY WRITTEN ADDRESS
+Address  : 0x0000003c
+Expected : 0x5a002003
+Actual   : 0x5a002003
+RESULT   : PASS - data matches
+
+================================================
+ APB READ TEST SUMMARY
+ Total transfers : 20
+ Passed checks   : 11
+ Failed checks   : 1
+================================================
+OVERALL RESULT: FAIL
+
+========== SCOREBOARD REPORT ==========
+Completed transfers : 20
+Checking errors     : 1
+========================================
+Driver timeouts : 0
+Local failures  : 0
+Error: TEST RESULT: FAIL
+Time: 1321 ns  Iteration: 0  Process: /$unit_apb_interface_sv_2514249464/apb_base_test(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORD=64)::finish_test  Scope: $unit_apb_interface_sv_2514249464.apb_base_test(ADDR_WIDTH=32,DATA_WIDTH=32,MEM_WORD=64)::finish_test  File: /home/fariha/Documents/apb_verification_project/apb_base_test.sv Line: 100
+
+====================================
+ APB TEST COMPLETED
+====================================
+
+========================================
+       APB FUNCTIONAL COVERAGE
+========================================
+Completed transfers sampled : 20
+Functional coverage         : 56.25%
+========================================
+
+$finish called at time : 1321 ns : File "/home/fariha/Documents/apb_verification_project/apb_tb_top.sv" Line 148
+## write_xsim_coverage -cov_db_name read
+INFO:  (TCL) Writing Functional Coverage Database at path : xsim.covdb/read/xsim.covinfo
+INFO-SAVE : (TCL) Code Coverage DB saved successfully at : xsim.codeCov/read/xsim.CCInfo
+## quit
+INFO: xsimkernel Simulation Memory Usage: 284020 KB (Peak: 336484 KB), Simulation CPU Usage: 1180 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 14 14:27:15 2026...

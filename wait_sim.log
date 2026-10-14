@@ -1,0 +1,124 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Oct 14 14:27:16 2026
+# Process ID         : 4079690
+# Current directory  : /home/fariha/Documents/apb_verification_project
+# Command line       : xsim -log wait_sim.log -mode tcl -source {xsim.dir/tb_top_sim/xsim_script.tcl}
+# Log file           : /home/fariha/Documents/apb_verification_project/wait_sim.log
+# Journal file       : /home/fariha/Documents/apb_verification_project/xsim.jou
+# Running On         : vlsi-vivado
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
+# CPU Frequency      : 4000.013 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 41875 MB
+# Swap memory        : 27648 MB
+# Total Virtual      : 69524 MB
+# Available Virtual  : 59104 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_top_sim/xsim_script.tcl
+# xsim {tb_top_sim} -testplusarg TEST=wait -wdb {wait_apb_wave.wdb} -cov_db_name wait -autoloadwcfg -tclbatch {wait_cov.tcl} -onfinish stop
+Time resolution is 1 ps
+source wait_cov.tcl
+## run all
+
+====================================
+ APB SLAVE VERIFICATION TESTBENCH
+ ADDR_WIDTH = 32
+ DATA_WIDTH = 32
+ Selected test = wait
+====================================
+
+
+================================================
+         APB WAIT-STATE VERIFICATION
+================================================
+
+========================================
+Starting APB test
+ADDR_WIDTH = 32
+DATA_WIDTH = 32
+========================================
+[INFO] Wait-state test started at 50000
+[INFO] Expected: PREADY stays LOW during stalls.
+[INFO] Expected: PREADY eventually becomes HIGH.
+
+-----------------------------------------------
+TEST 1: WRITE WITH WAIT STATES
+Address : 0x00000000
+Data    : 0xA5C37E19
+-----------------------------------------------
+
+[MONITOR] ACCESS START | Type=WRITE | Address=0x00000000
+[WAIT] Time=70000 | Type=WRITE | Address=0x00000000 | PREADY=0 | Stalled cycle=1
+[READY] Time=80000 | Type=WRITE | Address=0x00000000 | PREADY=1 | Wait cycles=1
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000000
+[READY] Time=80000 | Type=WRITE | Addr=0x00000000 | Wait cycles=0
+[COVERAGE] Transfer=1 Type=WRITE Addr=0x00000000 Error=0 Wait=0
+[MONITOR] TRANSFER #1 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000000 data=a5c37e19
+[PASS] WRITE completed without PSLVERR
+
+-----------------------------------------------
+TEST 2: READ WITH WAIT STATES
+Address  : 0x00000000
+Expected : 0xA5C37E19
+-----------------------------------------------
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000000
+[WAIT] Time=110000 | Type= READ | Addr=0x00000000 | Stalled cycle=1
+
+[MONITOR] ACCESS START | Type= READ | Address=0x00000000
+[WAIT] Time=110000 | Type= READ | Address=0x00000000 | PREADY=0 | Stalled cycle=1
+[READY] Time=120000 | Type= READ | Address=0x00000000 | PREADY=1 | Wait cycles=1
+[READY] Time=120000 | Type= READ | Addr=0x00000000 | Wait cycles=1
+[COVERAGE] Transfer=2 Type= READ Addr=0x00000000 Error=0 Wait=1
+[MONITOR] TRANSFER #2 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000000 data=a5c37e19
+[PASS] READ DATA matches: 0xa5c37e19
+
+================================================
+           WAIT-STATE TEST SUMMARY
+================================================
+Transfers attempted : 2
+Write wait cycles   : 1
+Read wait cycles    : 1
+Total wait cycles   : 2
+Failures recorded   : 0
+[PASS] Write wait states observed
+[PASS] Read wait states observed
+OVERALL RESULT: PASS
+================================================
+
+========== SCOREBOARD REPORT ==========
+Completed transfers : 2
+Checking errors     : 0
+========================================
+Driver timeouts : 0
+Local failures  : 0
+TEST RESULT: PASS
+
+====================================
+ APB TEST COMPLETED
+====================================
+
+========================================
+       APB FUNCTIONAL COVERAGE
+========================================
+Completed transfers sampled : 2
+Functional coverage         : 52.08%
+========================================
+
+$finish called at time : 151 ns : File "/home/fariha/Documents/apb_verification_project/apb_tb_top.sv" Line 148
+## write_xsim_coverage -cov_db_name wait
+INFO:  (TCL) Writing Functional Coverage Database at path : xsim.covdb/wait/xsim.covinfo
+INFO-SAVE : (TCL) Code Coverage DB saved successfully at : xsim.codeCov/wait/xsim.CCInfo
+## quit
+INFO: xsimkernel Simulation Memory Usage: 284020 KB (Peak: 336484 KB), Simulation CPU Usage: 1150 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 14 14:27:20 2026...

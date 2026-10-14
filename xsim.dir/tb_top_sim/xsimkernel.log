@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_top_sim/xsimk -wdb overwrite_apb_wave.wdb -cov_db_name overwrite -simmode gui -testplusarg TEST=overwrite -simrunnum 0 -socket 60159
+Design successfully loaded
+Design Loading Memory Usage: 197216 KB (Peak: 197216 KB)
+Design Loading CPU Usage: 1180 ms
+Simulation completed
+Simulation Memory Usage: 284020 KB (Peak: 336484 KB)
+Simulation CPU Usage: 1200 ms

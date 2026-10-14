@@ -1,0 +1,170 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Wed Oct 14 14:27:01 2026
+# Process ID         : 4079070
+# Current directory  : /home/fariha/Documents/apb_verification_project
+# Command line       : xsim -log reset_sim.log -mode tcl -source {xsim.dir/tb_top_sim/xsim_script.tcl}
+# Log file           : /home/fariha/Documents/apb_verification_project/reset_sim.log
+# Journal file       : /home/fariha/Documents/apb_verification_project/xsim.jou
+# Running On         : vlsi-vivado
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz
+# CPU Frequency      : 4121.495 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 41875 MB
+# Swap memory        : 27648 MB
+# Total Virtual      : 69524 MB
+# Available Virtual  : 59417 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_top_sim/xsim_script.tcl
+# xsim {tb_top_sim} -testplusarg TEST=reset -wdb {reset_apb_wave.wdb} -cov_db_name reset -autoloadwcfg -tclbatch {reset_cov.tcl} -onfinish stop
+Time resolution is 1 ps
+source reset_cov.tcl
+## run all
+
+====================================
+ APB SLAVE VERIFICATION TESTBENCH
+ ADDR_WIDTH = 32
+ DATA_WIDTH = 32
+ Selected test = reset
+====================================
+
+========================================
+Starting APB test
+ADDR_WIDTH = 32
+DATA_WIDTH = 32
+========================================
+
+==========================================
+             APB RESET TEST
+==========================================
+Address 1: 0x8
+Address 2: 0x1c
+
+PHASE 1: Write data before reset
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000008
+[READY] Time=80000 | Type=WRITE | Addr=0x00000008 | Wait cycles=0
+[COVERAGE] Transfer=1 Type=WRITE Addr=0x00000008 Error=0 Wait=0
+[MONITOR] TRANSFER #1 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000008 data=a5a55a5a
+PASS: Wrote 0xa5a55a5a to address 0x8
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000001c
+[WAIT] Time=110000 | Type=WRITE | Addr=0x0000001c | Stalled cycle=1
+[READY] Time=120000 | Type=WRITE | Addr=0x0000001c | Wait cycles=1
+[COVERAGE] Transfer=2 Type=WRITE Addr=0x0000001c Error=0 Wait=1
+[MONITOR] TRANSFER #2 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000001c data=12345678
+PASS: Wrote 0x12345678 to address 0x1c
+
+PHASE 2: Assert reset
+Reset asserted for 3 clock cycles.
+Reset deasserted.
+
+PHASE 3: Check memory contents after reset
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000008
+[WAIT] Time=210000 | Type= READ | Addr=0x00000008 | Stalled cycle=1
+[READY] Time=220000 | Type= READ | Addr=0x00000008 | Wait cycles=1
+[COVERAGE] Transfer=3 Type= READ Addr=0x00000008 Error=0 Wait=1
+[MONITOR] TRANSFER #3 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000008 data=a5a55a5a
+Error: FAIL: Address 0x8 contains 0xa5a55a5a after reset
+Time: 230 ns  Iteration: 0  Process: /$unit_apb_interface_sv_2514249464/apb_reset_test(ADDR_WIDTH=32,DATA_WIDTH=32)::run_test  Scope: $unit_apb_interface_sv_2514249464.apb_reset_test(ADDR_WIDTH=32,DATA_WIDTH=32)::run_test  File: /home/fariha/Documents/apb_verification_project/apb_reset_test.sv Line: 112
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000001c
+[WAIT] Time=250000 | Type= READ | Addr=0x0000001c | Stalled cycle=1
+[WAIT] Time=260000 | Type= READ | Addr=0x0000001c | Stalled cycle=2
+[READY] Time=270000 | Type= READ | Addr=0x0000001c | Wait cycles=2
+[COVERAGE] Transfer=4 Type= READ Addr=0x0000001c Error=0 Wait=2
+[MONITOR] TRANSFER #4 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000001c data=12345678
+Error: FAIL: Address 0x1c contains 0x12345678 after reset
+Time: 280 ns  Iteration: 0  Process: /$unit_apb_interface_sv_2514249464/apb_reset_test(ADDR_WIDTH=32,DATA_WIDTH=32)::run_test  Scope: $unit_apb_interface_sv_2514249464.apb_reset_test(ADDR_WIDTH=32,DATA_WIDTH=32)::run_test  File: /home/fariha/Documents/apb_verification_project/apb_reset_test.sv Line: 135
+
+PHASE 4: Write new data after reset
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x00000008
+[WAIT] Time=300000 | Type=WRITE | Addr=0x00000008 | Stalled cycle=1
+[WAIT] Time=310000 | Type=WRITE | Addr=0x00000008 | Stalled cycle=2
+[READY] Time=320000 | Type=WRITE | Addr=0x00000008 | Wait cycles=2
+[COVERAGE] Transfer=5 Type=WRITE Addr=0x00000008 Error=0 Wait=2
+[MONITOR] TRANSFER #5 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=00000008 data=deadbeef
+PASS: Wrote 0xdeadbeef to address 0x8
+
+[MONITOR] ACCESS START | Type=WRITE | Addr=0x0000001c
+[WAIT] Time=350000 | Type=WRITE | Addr=0x0000001c | Stalled cycle=1
+[WAIT] Time=360000 | Type=WRITE | Addr=0x0000001c | Stalled cycle=2
+[WAIT] Time=370000 | Type=WRITE | Addr=0x0000001c | Stalled cycle=3
+[WAIT] Time=380000 | Type=WRITE | Addr=0x0000001c | Stalled cycle=4
+[WAIT] Time=390000 | Type=WRITE | Addr=0x0000001c | Stalled cycle=5
+[READY] Time=400000 | Type=WRITE | Addr=0x0000001c | Wait cycles=5
+[COVERAGE] Transfer=6 Type=WRITE Addr=0x0000001c Error=0 Wait=5
+[MONITOR] TRANSFER #6 captured | PSLVERR=0
+SCOREBOARD: WRITE addr=0000001c data=cafebabe
+PASS: Wrote 0xcafebabe to address 0x1c
+
+PHASE 5: Verify new data after reset
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x00000008
+[WAIT] Time=430000 | Type= READ | Addr=0x00000008 | Stalled cycle=1
+[WAIT] Time=440000 | Type= READ | Addr=0x00000008 | Stalled cycle=2
+[WAIT] Time=450000 | Type= READ | Addr=0x00000008 | Stalled cycle=3
+[WAIT] Time=460000 | Type= READ | Addr=0x00000008 | Stalled cycle=4
+[READY] Time=470000 | Type= READ | Addr=0x00000008 | Wait cycles=4
+[COVERAGE] Transfer=7 Type= READ Addr=0x00000008 Error=0 Wait=4
+[MONITOR] TRANSFER #7 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=00000008 data=deadbeef
+PASS: Address 0x8 = 0xdeadbeef
+
+[MONITOR] ACCESS START | Type= READ | Addr=0x0000001c
+[WAIT] Time=500000 | Type= READ | Addr=0x0000001c | Stalled cycle=1
+[WAIT] Time=510000 | Type= READ | Addr=0x0000001c | Stalled cycle=2
+[READY] Time=520000 | Type= READ | Addr=0x0000001c | Wait cycles=2
+[COVERAGE] Transfer=8 Type= READ Addr=0x0000001c Error=0 Wait=2
+[MONITOR] TRANSFER #8 captured | PSLVERR=0
+SCOREBOARD: READ PASS addr=0000001c data=cafebabe
+PASS: Address 0x1c = 0xcafebabe
+
+==========================================
+          RESET TEST SUMMARY
+==========================================
+Transfers attempted : 8
+Checks passed       : 6
+Checks failed       : 2
+==========================================
+
+
+========== SCOREBOARD REPORT ==========
+Completed transfers : 8
+Checking errors     : 0
+========================================
+Driver timeouts : 0
+Local failures  : 0
+TEST RESULT: PASS
+
+====================================
+ APB TEST COMPLETED
+====================================
+
+========================================
+       APB FUNCTIONAL COVERAGE
+========================================
+Completed transfers sampled : 8
+Functional coverage         : 56.25%
+========================================
+
+$finish called at time : 531 ns : File "/home/fariha/Documents/apb_verification_project/apb_tb_top.sv" Line 148
+## write_xsim_coverage -cov_db_name reset
+INFO:  (TCL) Writing Functional Coverage Database at path : xsim.covdb/reset/xsim.covinfo
+INFO-SAVE : (TCL) Code Coverage DB saved successfully at : xsim.codeCov/reset/xsim.CCInfo
+## quit
+INFO: xsimkernel Simulation Memory Usage: 284020 KB (Peak: 336484 KB), Simulation CPU Usage: 1150 ms
+INFO: [Common 17-206] Exiting xsim at Wed Oct 14 14:27:04 2026...

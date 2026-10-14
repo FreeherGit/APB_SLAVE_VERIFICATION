@@ -1,12 +1,18 @@
-
 class apb_monitor #(
     parameter int ADDR_WIDTH = 32,
-    parameter int DATA_WIDTH = 32
+    parameter int DATA_WIDTH = 32,
+    parameter int MEM_WORD   = 64
 );
 
     virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif;
 
     mailbox #(apb_transaction #(ADDR_WIDTH, DATA_WIDTH)) mon2sb;
+
+    apb_coverage #(
+        ADDR_WIDTH,
+        DATA_WIDTH,
+        MEM_WORD
+    ) cov;
 
     int unsigned observed_transfers;
     int unsigned write_wait_cycles;
@@ -14,10 +20,12 @@ class apb_monitor #(
 
     function new(
         virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif,
-        mailbox #(apb_transaction #(ADDR_WIDTH, DATA_WIDTH)) mon2sb
+        mailbox #(apb_transaction #(ADDR_WIDTH, DATA_WIDTH)) mon2sb,
+        apb_coverage #(ADDR_WIDTH, DATA_WIDTH, MEM_WORD) cov
     );
         this.vif = vif;
         this.mon2sb = mon2sb;
+        this.cov = cov;
 
         observed_transfers = 0;
         write_wait_cycles  = 0;
@@ -59,7 +67,7 @@ class apb_monitor #(
                     current_wait_cycles++;
 
                     $display(
-                        "[WAIT] Time=%0t | Type=%s | Addr=0x%08h | PREADY=0 | Stalled cycle=%0d",
+                        "[WAIT] Time=%0t | Type=%s | Addr=0x%08h | Stalled cycle=%0d",
                         $time,
                         vif.pwrite ? "WRITE" : "READ",
                         vif.paddr,
@@ -89,7 +97,19 @@ class apb_monitor #(
                     tr.write = vif.pwrite;
                     tr.error = vif.pslverr;
 
+                    // Sample functional coverage once per completed transfer.
+                    if (cov != null) begin
+                        cov.sample_transfer(
+                            vif.paddr,
+                            vif.pwdata,
+                            vif.pwrite,
+                            vif.pslverr,
+                            current_wait_cycles
+                        );
+                    end
+
                     observed_transfers++;
+
                     mon2sb.put(tr);
 
                     $display(
@@ -110,19 +130,14 @@ class apb_monitor #(
 
     endtask
 
-    task report_wait_summary();
-
-        $display("\n========================================");
-        $display("       MONITOR WAIT-STATE SUMMARY");
-        $display("========================================");
+    function void report_wait_summary();
+        $display("\n====================================");
+        $display("       APB MONITOR SUMMARY");
+        $display("====================================");
         $display("Observed transfers : %0d", observed_transfers);
         $display("Write wait cycles  : %0d", write_wait_cycles);
         $display("Read wait cycles   : %0d", read_wait_cycles);
-        $display("Total wait cycles  : %0d",
-                 write_wait_cycles + read_wait_cycles);
-        $display("========================================");
-
-    endtask
+        $display("====================================");
+    endfunction
 
 endclass
-

@@ -1,0 +1,74 @@
+
+ Options Set are : 
+
+   Command Line               : xcrg -dir ./xsim.covdb -cc_dir ./xsim.codeCov -cc_db reset -cc_db write -cc_db read -cc_db wait -cc_db back_to_back -cc_db error -cc_db protocol -cc_db overwrite -report_dir ./cov_report -report_format html
+   Report Format              : html
+   Log File                   : xcrg.log
+   Functional Coverage Dir[s] : ./xsim.covdb
+   Code Coverage Dir[s]       : ./xsim.codeCov
+   Code Coverage DB[s]        : back_to_back
+                                error
+                                overwrite
+                                protocol
+                                read
+                                reset
+                                wait
+                                write
+
+
+********************************************************
+                  Code Coverage Report 
+********************************************************
+
+ Restoring Code Coverage DB[s] from : 
+  1	./xsim.codeCov/back_to_back/xsim.CCInfo
+  2	./xsim.codeCov/error/xsim.CCInfo
+  3	./xsim.codeCov/overwrite/xsim.CCInfo
+  4	./xsim.codeCov/protocol/xsim.CCInfo
+  5	./xsim.codeCov/read/xsim.CCInfo
+  6	./xsim.codeCov/reset/xsim.CCInfo
+  7	./xsim.codeCov/wait/xsim.CCInfo
+  8	./xsim.codeCov/write/xsim.CCInfo
+
+
+ Code Coverage Merge Directory                    : .
+ Code Coverage Merge DB                           : xcrg_mergedDB
+ Saving the Merged Code Coverage Info at          : ./xsim.codeCov/xcrg_mergedDB/xsim.CCInfo
+ Created Coverage Report Directory     : ./cov_report/codeCoverageReport
+
+ Code Coverage HTML Report directory              : ./cov_report/codeCoverageReport
+
+ Line Coverage Score 99.3574
+ Branch Coverage Score 70.1493
+ Condition Coverage Score 83.0508
+ Toggle Coverage Score 64.67
+
+
+
+********************************************************
+                  Functional Coverage Report 
+********************************************************
+
+ Restoring Functional Coverage DB[s] from : 
+  1	./xsim.covdb/wait/xsim.covinfo
+  2	./xsim.covdb/overwrite/xsim.covinfo
+  3	./xsim.covdb/error/xsim.covinfo
+  4	./xsim.covdb/back_to_back/xsim.covinfo
+  5	./xsim.covdb/write/xsim.covinfo
+  6	./xsim.covdb/reset/xsim.covinfo
+  7	./xsim.covdb/read/xsim.covinfo
+  8	./xsim.covdb/protocol/xsim.covinfo
+
+ Functional Coverage Merge Directory              : .
+ Functional Coverage Merge DB                     : xcrg_mergedDB
+ Saving the Merged Functional Coverage Info at    : ./xsim.covdb/xcrg_mergedDB/xsim.covinfo
+ Created Coverage Report Directory    : ./cov_report/functionalCoverageReport
+
+ Functional Coverage HTML Report directory        : ./cov_report/functionalCoverageReport
+
+ Creating dashboard.html 
+
+ Creating groups.html 
+
+ Creating grp0.html 
+

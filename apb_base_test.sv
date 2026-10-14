@@ -1,23 +1,33 @@
 
 virtual class apb_base_test #(
     parameter int ADDR_WIDTH = 32,
-    parameter int DATA_WIDTH = 32
+    parameter int DATA_WIDTH = 32,
+    parameter int MEM_WORD   = 64
 );
 
     virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif;
 
+    apb_coverage #(ADDR_WIDTH, DATA_WIDTH, MEM_WORD) cov;
+
     apb_environment #(
-        ADDR_WIDTH, DATA_WIDTH
+        ADDR_WIDTH, DATA_WIDTH, MEM_WORD
     ) env;
 
     int unsigned local_failures;
 
     function new(
-        virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif
+        virtual apb_if #(ADDR_WIDTH, DATA_WIDTH) vif,
+        apb_coverage #(ADDR_WIDTH, DATA_WIDTH, MEM_WORD) shared_cov = null
     );
 
         this.vif = vif;
-        env = new(vif);
+
+        if (shared_cov == null)
+            cov = new();
+        else
+            cov = shared_cov;
+
+        env = new(vif, cov);
         local_failures = 0;
 
     endfunction
@@ -70,8 +80,6 @@ virtual class apb_base_test #(
 
         env.wait_for_transfers(expected_transfers);
 
-        // Allow the scoreboard to finish processing the last
-        // mailbox transaction.
         #1;
 
         env.sb.report();
